@@ -10,7 +10,6 @@ export default function Page() {
 	const products = useSelector(state => state.products.productsList);
 	const [quant, setQuant] = useState(16);
 	const dispatch = useDispatch();
-	console.log(products);
 
 	useEffect(() => {
 		startProducts();
@@ -40,8 +39,8 @@ export default function Page() {
 					PRODUTOS
 				</button>
 			</Button>
-			{ products.length > 0 && 
-				<Products>
+			{ products.length > 0 
+				? <Products>
 					{products.slice(quant - 16, quant).map((product, index) => (
 						<Product key={index}>
 							<Img>
@@ -52,6 +51,7 @@ export default function Page() {
 						</Product>
 					))}
 				</Products>
+				: <h1>Nada encontrado</h1>
 			}
 			<button type="button" onClick={nextPage}>
 				+

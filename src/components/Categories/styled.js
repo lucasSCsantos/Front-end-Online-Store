@@ -24,5 +24,44 @@ export const Category = styled.div`
 	width: 74.513px;
 	overflow: hidden;
 	height: 70px;
+	display: flex;
+	align-items: flex-end;
 	cursor: pointer;
+
+	p {
+		display: flex;
+		align-items: flex-end;
+		margin-bottom: 0px;
+		position: absolute;
+		height: 40px;
+		width: 70px;
+		opacity: 1;
+		transition: 0.5s ease;
+		z-index: 0;
+	}
+
+	svg {
+		position: relative;
+		right: -50px;
+		top: -40px;
+		color: #34A153;
+		opacity: 0.5;
+		font-size: 60px;
+		transition: 0.2s ease;
+		z-index: 1;
+	}
+
+	&:hover {
+		svg {
+			right: -8px;
+			top: -5px;
+			transition: 0.2s ease;
+			color: #34A153;
+			opacity: 1;
+		}
+		p {
+			transition: 0.5s ease;
+			opacity: 0;
+		}
+	}
 `
