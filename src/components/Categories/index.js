@@ -29,21 +29,20 @@ export default function Page() {
 		{ icon: <DirectionsBikeOutlinedIcon /> },
 		{ icon: <CardGiftcardOutlinedIcon /> },
 		{ icon: <CameraAltOutlinedIcon /> },
-
-		
 	];
 
 	const [categories, setCategories] = useState([]);
 	const dispatch = useDispatch();
 	
 	useEffect(() => {
+		const getCategoriesList = async () => {
+			const categories = await getCategories();
+			setCategories(categories);
+		}
+
 		getCategoriesList();
 	}, [])
 
-	const getCategoriesList = async () => {
-		const categories = await getCategories();
-		setCategories(categories);
-	}
 
 	const getProductByCategory = async (categoryId) => {
 		const products = await getProductsFromCategoryAndQuery(categoryId, 'QUERY')

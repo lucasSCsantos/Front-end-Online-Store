@@ -12,13 +12,14 @@ export default function Page() {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
+		const startProducts = async () => {
+			const products = await getProductsFromCategoryAndQuery('CATEGORY_ID', 'motorola');
+			dispatch(product_action(products.results));
+		}
+		
 		startProducts();
 	}, [])
 
-	const startProducts = async () => {
-		const products = await getProductsFromCategoryAndQuery('CATEGORY_ID', 'motorola');
-		dispatch(product_action(products.results));
-	}
 
 	const nextPage = () => {
 		if	(quant < products.length) {

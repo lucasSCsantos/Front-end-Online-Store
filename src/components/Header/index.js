@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Container, Logo, Search, Icons, ContentArea } from './styled';
 import { getProductsFromCategoryAndQuery } from '../../services/api';
 import { useDispatch, useSelector } from 'react-redux';
