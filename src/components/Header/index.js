@@ -13,13 +13,8 @@ export default function Page() {
 
 	const searchProducts = async () => {
 		if (search) {
-			if (categoryId) {
-				const products = await getProductsFromCategoryAndQuery(categoryId, search);
-				dispatch(product_action(products.results));
-			} else {
-				const products = await getProductsFromCategoryAndQuery('CATEGORY_ID', search);
-				dispatch(product_action(products.results));
-			}
+			const products = await getProductsFromCategoryAndQuery('CATEGORY_ID', search);
+			dispatch(product_action(products.results));
 		}
 	};
 

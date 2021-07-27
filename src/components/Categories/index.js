@@ -48,7 +48,7 @@ export default function Page() {
 	const getProductByCategory = async (categoryId) => {
 		const products = await getProductsFromCategoryAndQuery(categoryId, 'QUERY')
 		dispatch(product_action(products.results));
-		dispatch(category_action(categoryId));
+		// dispatch(category_action(categoryId));
 	}
 
 	return (

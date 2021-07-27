@@ -64,7 +64,11 @@ export const Search = styled.div`
 			border: solid 1px #F2F3F5;
 			color: white;
 			background-color: #34a153;
-			border-radius: 0 4px 4px 0;
+			border-radius: 0 2px 2px 0;
+		}
+
+		input::placeholder {
+			font-size: 12px;
 		}
 
 		.searchBtn:active {
