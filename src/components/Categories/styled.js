@@ -69,9 +69,9 @@ export const Category = styled.div`
 
 	@keyframes alzer {
 		0% { top: -40px;}
-		20% { top: -50px; right: -16px;}
-		40% { right: -16px; top: -5px;}
-		60% { right: -12px; top: -10px;}
+		20% { top: -50px; right: -8px;}
+		40% { right: -10px; top: -5px;}
+		60% { right: -8px; top: -10px;}
 		70% { right: -8px; top: -5px;}
 		to { right: -8px; top: -5px;}
 	}

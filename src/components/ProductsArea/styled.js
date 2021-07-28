@@ -29,7 +29,6 @@ export const Products = styled.div`
 	width: 1170px;
 	display: flex;
 	flex-wrap: wrap;
-	/* background-color: hotpink; */
 	/* justify-content: space-between; */
 	padding: 35px 0 70px 0;
 `;

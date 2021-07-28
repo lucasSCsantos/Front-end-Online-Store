@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const Product = styled.div`
-	height: 321px;
-	width: 230.5px;
-	padding: 15px 15px 7px 15px;
-	margin: 0 6.5px 0 20px;
+	height: 323px;
+	width: 198px;
+	padding: 10px 12px 10px 12px;
+	margin: 0 5px 0 5px;
 	border:  #FBFBFB 1px solid;
-	margin-bottom: 30px;
+	margin-bottom: 10px;
 	background-color: white;
 	border-radius: 2px;
 	box-shadow: 0 15px 10px rgb(0 0 0 / 2%);

@@ -5,7 +5,7 @@ export const Container = styled.div`
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	background-color: white;
+	background-color: #FBFBFB;
 	flex-direction: column;
 
 	.top {
@@ -38,6 +38,7 @@ export const Products = styled.div`
 	width: 1170px;
 	display: flex;
 	flex-wrap: wrap;
+
 	/* background-color: hotpink; */
 	/* justify-content: space-between; */
 	padding: 5px 0 70px 0;

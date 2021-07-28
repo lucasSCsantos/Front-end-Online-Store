@@ -39,22 +39,21 @@ export default function Page() {
 						<button type="button" className="menuBtn">
 							<MenuIcon />
 						</button>
-						<Link
-							className="search"
-							to={`/search/${search}`}
-						>
+						
 							<button
 								type="button"
 								onClick={() => {
-								searchProducts();
-								setSearch('');
-								dispatch(search_action(search));
+									if (search) {
+										searchProducts();
+										dispatch(search_action(search));
+										history.push(`/search/${search}`);
+										setSearch('');
+									}
 								}}
 								className="searchBtn"
 							>
 								<SearchIcon />
 							</button>
-						</Link>
 					</form>
 				</Search>
 				<Icons>
