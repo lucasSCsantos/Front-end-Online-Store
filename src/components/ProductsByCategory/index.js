@@ -1,26 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, Container, Products, Pages } from './styled';
-import { fetchProducts } from '../../action';
+import { Container, Products, Pages } from './styled';
 import Product from '../Product';
 
-
-
-export default function Page() {
-	// .replace(/\s/g, '-').toLowerCase()
+export default function Page(props) {
 	const products = useSelector(state => state.products.productsList);
 	const loading = useSelector(state => state.products.isFetching);
+	const category = useSelector(state => state.products.category);
 	const [quant, setQuant] = useState(16);
 	const dispatch = useDispatch();
-
-	useEffect(() => {
-		const startProducts = async () => {
-			dispatch(fetchProducts('CATEGORY_ID', 'melhores'));
-		}
-		
-		startProducts();
-	}, [])
-
 
 	const nextPage = () => {
 		if	(quant < products.length) {
@@ -46,11 +34,7 @@ export default function Page() {
 
 	return (
 		<Container>
-			<Button>
-				<button>
-					PRODUTOS
-				</button>
-			</Button>
+			<p className="top">{category}</p>
 			{ loading ? <div className="loader" /> : productsList }
 			{ (products.length && !loading) > 0 
 				? <Pages>

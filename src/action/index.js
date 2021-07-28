@@ -1,6 +1,7 @@
 import { getProductsFromCategoryAndQuery } from "../services/api";
 
 export const SEND_CATEGORY = 'SEND_CATEGORY';
+export const SEND_SEARCH = 'SEND_SEARCH';
 export const GET_PRODUCTS = 'GET_PRODUCTS';
 export const REQUEST = 'REQUEST';
 export const FAILED = 'FAILED';
@@ -16,6 +17,13 @@ export const getDetails = (payload) => (
 export const category_action = (payload) => (
 	{
 		type: SEND_CATEGORY,
+		payload,
+	}
+);
+
+export const search_action = (payload) => (
+	{
+		type: SEND_SEARCH,
 		payload,
 	}
 );

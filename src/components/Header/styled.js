@@ -56,12 +56,12 @@ export const Search = styled.div`
 			background-color: #FBFBFB;
 		}
 
-		.searchBtn {
+		.search, .searchBtn {
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			outline: none;
-			border: solid 1px #F2F3F5;
+			border: none;
 			color: white;
 			background-color: #34a153;
 			border-radius: 0 2px 2px 0;
@@ -71,14 +71,18 @@ export const Search = styled.div`
 			font-size: 12px;
 		}
 
-		.searchBtn:active {
+		.search:active, .searchBtn:active {
 			background-color: #398439;
+			.searchBtn {
+				background-color: #398439;
+			}
 		}
 
-		button {
+		button, .search {
 			flex-basis: 12%;
 			cursor: pointer;
 		}
+
 	}
 `;
 

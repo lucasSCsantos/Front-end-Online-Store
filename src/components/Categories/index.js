@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { category_action, fetchProducts, product_action } from '../../action';
-import { getCategories, getProductsFromCategoryAndQuery } from '../../services/api';
+import { useDispatch } from 'react-redux';
+import { category_action, fetchProducts } from '../../action';
+import { getCategories } from '../../services/api';
 import { Categories, Category, Container } from './styled';
 import DriveEtaOutlinedIcon from '@material-ui/icons/DriveEtaOutlined';
 import LocalShippingOutlinedIcon from '@material-ui/icons/LocalShippingOutlined';
@@ -14,6 +14,7 @@ import SpaOutlinedIcon from '@material-ui/icons/SpaOutlined';
 import DirectionsBikeOutlinedIcon from '@material-ui/icons/DirectionsBikeOutlined';
 import CardGiftcardOutlinedIcon from '@material-ui/icons/CardGiftcardOutlined';
 import CameraAltOutlinedIcon from '@material-ui/icons/CameraAltOutlined';
+import { Link } from 'react-router-dom';
 
 export default function Page() {
 	
@@ -45,20 +46,22 @@ export default function Page() {
 
 
 	const getProductByCategory = async (categoryId) => {
-		// const products = await getProductsFromCategoryAndQuery(categoryId, 'QUERY');
 		dispatch(fetchProducts(categoryId, 'QUERY'));
-		// dispatch(product_action(products.results));
-		// dispatch(category_action(categoryId));
 	}
 
 	return (
 		<Container>
 			<Categories>
 				{categories.slice(0,11).map((category, index) => (
-					<Category key={ index } onClick={() => getProductByCategory(category.id)} aria-hidden="true">
-						<p>{category.name}</p>
-						{icons[index].icon}
-					</Category>
+					<Link
+						to={`/category/${category.name.replace(/\s/g, '-').toLowerCase()}`}
+						onClick={() => dispatch(category_action(category.name))}
+					>
+						<Category key={ index } onClick={() => getProductByCategory(category.id)} aria-hidden="true">
+							<p>{category.name}</p>
+							{icons[index].icon}
+						</Category>
+					</Link>
 				))}
 			</Categories>
 		</Container>

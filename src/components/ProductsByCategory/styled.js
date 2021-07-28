@@ -8,6 +8,15 @@ export const Container = styled.div`
 	background-color: white;
 	flex-direction: column;
 
+	.top {
+		align-self: flex-start;
+		margin-left: 361px;
+		color: #5A5555;
+		font-size: 20px;
+		font-weight: 800;
+		/* background-color: #2D8946; */
+	}
+
 	.loader {
 		margin-top: 100px;
 		border: 8px solid #f3f3f3; /* Light grey */
@@ -31,7 +40,7 @@ export const Products = styled.div`
 	flex-wrap: wrap;
 	/* background-color: hotpink; */
 	/* justify-content: space-between; */
-	padding: 35px 0 70px 0;
+	padding: 5px 0 70px 0;
 `;
 
 export const Button = styled.div`

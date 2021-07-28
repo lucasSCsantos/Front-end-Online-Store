@@ -27,7 +27,7 @@ export const Category = styled.div`
 	display: flex;
 	align-items: flex-end;
 	cursor: pointer;
-
+	
 	p {
 		display: flex;
 		align-items: flex-end;
@@ -53,15 +53,26 @@ export const Category = styled.div`
 
 	&:hover {
 		svg {
-			right: -8px;
-			top: -5px;
-			transition: 0.2s ease;
-			color: #34A153;
+			/* right: -8px;
+			top: -5px; */
+			transition: 1s ease;
+			/* color: #34A153;  */
 			opacity: 1;
+			animation: alzer linear 0.5s ;
+			animation-fill-mode: forwards;  
 		}
 		p {
 			transition: 0.5s ease;
 			opacity: 0;
 		}
+	}
+
+	@keyframes alzer {
+		0% { top: -40px;}
+		20% { top: -50px; right: -16px;}
+		40% { right: -16px; top: -5px;}
+		60% { right: -12px; top: -10px;}
+		70% { right: -8px; top: -5px;}
+		to { right: -8px; top: -5px;}
 	}
 `
