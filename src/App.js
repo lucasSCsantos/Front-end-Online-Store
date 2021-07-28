@@ -1,22 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route, Switch } from 'react-router';
+import Home from './pages/Home'
+import ProductPage from './pages/ProductPage'
+import ProductsByCategory from './components/ProductsByCategory'
+import ProductsBySearch from './components/ProductsBySearch'
+import Header from './components/Header';
+import Categories from './components/Categories';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={ logo } className="App-logo" alt="logo" />
-        <p>Edit src/App.js and save to reload.</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <Categories />
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route
+          path="/product/:id"
+          exact
+          render={ (props) => <ProductPage { ...props } /> }
+        />
+        <Route
+          path="/category/:id"
+          exact
+          render={ (props) => <ProductsByCategory { ...props } /> }
+        />
+        <Route
+          path="/search/:id"
+          exact
+          render={ (props) => <ProductsBySearch { ...props } /> }
+        />
+      </Switch>
     </div>
   );
 }
