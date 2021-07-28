@@ -7,14 +7,30 @@ export const Container = styled.div`
 	width: 100%;
 	background-color: white;
 	flex-direction: column;
+
+	.loader {
+		margin-top: 100px;
+		border: 8px solid #f3f3f3; /* Light grey */
+		border-top: 8px solid #2D8946; /* Blue */
+		border-radius: 50%;
+		width: 100px;
+		height: 100px;
+		align-self: center;
+		animation: spin 1s linear infinite;
+	}
+
+	@keyframes spin {
+		0% { transform: rotate(0deg); }
+		100% { transform: rotate(360deg); }
+	}
 `;
 
 export const Products = styled.div`
-	width: 61%;
+	width: 1170px;
 	display: flex;
 	flex-wrap: wrap;
 	/* background-color: hotpink; */
-	justify-content: space-between;
+	/* justify-content: space-between; */
 	padding: 35px 0 70px 0;
 `;
 
@@ -22,7 +38,7 @@ export const Product = styled.div`
 	height: 321px;
 	width: 230.5px;
 	padding: 15px 15px 7px 15px;
-	/* margin: 0 15px; */
+	margin: 0 6.5px 0 20px;
 	border:  #FBFBFB 1px solid;
 	margin-bottom: 30px;
 	/* background-color: honeydew; */
@@ -76,4 +92,13 @@ export const Button = styled.div`
 			transition: 100ms ease;
 		}
 	}
+`;
+
+export const Pages = styled.div`
+	/* background-color: blue; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 40px;
+	width: 100%;
 `;

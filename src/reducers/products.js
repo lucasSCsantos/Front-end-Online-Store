@@ -1,16 +1,23 @@
-import { SET_LIST, SEND_CATEGORY } from '../action'
+import { GET_DETAILS, SEND_CATEGORY, FAILED, REQUEST, GET_PRODUCTS } from '../action'
 
 const initial_state = {
 	productsList: [],
 	category: '',
+	isFetching: false,
+	error: '',
+	product: '',
 }
 
 const products = (state = initial_state, action) => {
 	switch (action.type) {
-		case SET_LIST:	
-			return { ...state, productsList: action.payload };
-		case SEND_CATEGORY:
-			return { ...state, category: action.payload }
+		case REQUEST:
+			return { ...state, isFetching: true }
+		case GET_PRODUCTS:	
+			return { ...state, productsList: action.payload, isFetching: false };
+		case FAILED:
+			return { ...state, error: action.payload, isFetching: false }
+		case GET_DETAILS:
+			return { ...state, product: action.payload }
 		default:
 			return state;
 	}

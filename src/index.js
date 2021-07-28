@@ -1,15 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { Provider } from 'react-redux'
-import { compose, createStore } from 'redux'
+import { Provider } from 'react-redux';
 import App from './App';
 import rootReducer from './reducers';
 import { BrowserRouter } from 'react-router-dom';
+import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
 
-const extension = window.devToolsExtension() || ((f) => f);
-
-const store = createStore(rootReducer, compose(extension));
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(
+    applyMiddleware(thunk),
+  ),
+);
 
 ReactDOM.render(
   <Provider store={ store }>

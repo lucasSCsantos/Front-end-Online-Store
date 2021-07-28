@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Container, Logo, Search, Icons, ContentArea } from './styled';
 import { getProductsFromCategoryAndQuery } from '../../services/api';
 import { useDispatch, useSelector } from 'react-redux';
-import { product_action } from '../../action';
+import { fetchProducts } from '../../action';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
+import { Link } from 'react-router-dom';
 
 export default function Page() {
 	const dispatch = useDispatch();
@@ -13,17 +14,18 @@ export default function Page() {
 
 	const searchProducts = async () => {
 		if (search) {
-			const products = await getProductsFromCategoryAndQuery('CATEGORY_ID', search);
-			dispatch(product_action(products.results));
+			dispatch(fetchProducts('CATEGORY_ID', search))
 		}
 	};
 
 	return (
 		<Container>
 			<ContentArea>
-				<Logo >
-					Alser.kz
-				</Logo>
+				<Link to="/">
+					<Logo >
+						Alser.kz
+					</Logo>
+				</Link>
 				<Search>
 					<form>
 						<input

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { category_action, product_action } from '../../action';
+import { category_action, fetchProducts, product_action } from '../../action';
 import { getCategories, getProductsFromCategoryAndQuery } from '../../services/api';
 import { Categories, Category, Container } from './styled';
 import DriveEtaOutlinedIcon from '@material-ui/icons/DriveEtaOutlined';
@@ -45,8 +45,9 @@ export default function Page() {
 
 
 	const getProductByCategory = async (categoryId) => {
-		const products = await getProductsFromCategoryAndQuery(categoryId, 'QUERY')
-		dispatch(product_action(products.results));
+		// const products = await getProductsFromCategoryAndQuery(categoryId, 'QUERY');
+		dispatch(fetchProducts(categoryId, 'QUERY'));
+		// dispatch(product_action(products.results));
 		// dispatch(category_action(categoryId));
 	}
 
