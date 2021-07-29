@@ -29,6 +29,7 @@ export const Category = styled.div`
 	cursor: pointer;
 	
 	p {
+		color: black;
 		display: flex;
 		align-items: flex-end;
 		margin-bottom: 0px;

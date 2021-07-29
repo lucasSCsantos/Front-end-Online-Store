@@ -22,6 +22,15 @@ export const Product = styled.div`
 	.price {
 		align-self: center;
 	}
+
+	.detailsP {
+		text-decoration: none;
+		color: black;
+
+		&:hover {
+			color: #388E3B;
+		}
+	}
 `;
 
 export const Img = styled.div`

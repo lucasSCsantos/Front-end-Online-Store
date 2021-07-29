@@ -18,11 +18,11 @@ export default function Page({index, product}) {
 					</Img>
 				</Link>
 				<Link
-					className="details"
+					className="detailsP"
 					to={ `/product/${encodeURIComponent(product.title.replace(/\s/g, '-').toLowerCase())}`}
 					onClick={() => dispatch(getDetails(product))}
 				>
-					<p>{product.title.slice(0, 50)}</p>
+					{product.title.slice(0, 50)}
 				</Link>
 				<p className="price">R${product.price.toFixed(2)}</p>
 			</Product>

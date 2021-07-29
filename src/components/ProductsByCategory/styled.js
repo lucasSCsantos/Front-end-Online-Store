@@ -74,4 +74,18 @@ export const Pages = styled.div`
 	align-items: center;
 	height: 40px;
 	width: 100%;
+
+	.MuiButtonBase-root {
+		background-color: transparent;
+		border: 1px solid #fbfbfb;
+		box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 10px;
+	}
+
+	.MuiButtonBase-root:hover {
+		background-color: rgba(52, 161, 83, 0.1);
+	}
+
+	.MuiPaginationItem-page.Mui-selected {
+		background-color: #34A153;
+	}
 `;

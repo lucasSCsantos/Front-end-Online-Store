@@ -58,7 +58,7 @@ export default function Page() {
 						onClick={() => dispatch(category_action(category.name))}
 					>
 						<Category key={ index } onClick={() => getProductByCategory(category.id)} aria-hidden="true">
-							<p>{category.name}</p>
+							<p className="cTitle">{category.name}</p>
 							{icons[index].icon}
 						</Category>
 					</Link>
