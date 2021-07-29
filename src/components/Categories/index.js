@@ -56,8 +56,9 @@ export default function Page() {
 					<Link
 						to={`/category/${category.name.replace(/\s/g, '-').toLowerCase()}`}
 						onClick={() => dispatch(category_action(category.name))}
+						key={ index }
 					>
-						<Category key={ index } onClick={() => getProductByCategory(category.id)} aria-hidden="true">
+						<Category onClick={() => getProductByCategory(category.id)} aria-hidden="true">
 							<p className="cTitle">{category.name}</p>
 							{icons[index].icon}
 						</Category>
