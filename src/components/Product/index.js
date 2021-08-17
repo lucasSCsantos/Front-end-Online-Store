@@ -3,9 +3,13 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getDetails } from '../../action';
 import { Product, Img } from './styled';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import StarRatings from 'react-star-ratings';
 
 export default function Page({product}) {
 	const dispatch = useDispatch();
+	const productRate = localStorage.productRates
+		? JSON.parse(localStorage.productRates)[product.title] : 0;
 	return (
 			<Product>
 				<Link
@@ -17,14 +21,34 @@ export default function Page({product}) {
 						<img src={product.thumbnail} alt={product.title} />
 					</Img>
 				</Link>
+				<StarRatings
+					rating={productRate}
+					starRatedColor="#F37B35"
+					starHoverColor="#F37B35"
+					starDimension="15px"
+					numberOfStars={5}
+					name='rating'
+				/>
 				<Link
 					className="detailsP"
 					to={ `/product/${encodeURIComponent(product.title.replace(/\s/g, '-').toLowerCase())}`}
 					onClick={() => dispatch(getDetails(product))}
 				>
-					{product.title.slice(0, 50)}
+					{product.title}
 				</Link>
-				<p className="price">R${product.price.toFixed(2)}</p>
+				<div className="product-bottom">
+					<button type="button" className="left">
+
+					</button>
+					<p className="product-price">R$	<span>{product.price.toFixed(2)}</span></p>
+					<button type="button" className="right">
+						<p>Comprar</p>
+						<ShoppingCartIcon style={{
+							position: 'absolute',
+							right: '10px',
+						}} />
+					</button>
+				</div>
 			</Product>
 	)
 }
