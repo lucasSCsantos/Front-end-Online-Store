@@ -5,10 +5,12 @@ import { fetchProducts, search_action } from '../../action';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import { Link, useHistory } from 'react-router-dom';
+import Sidebar from 'react-sidebar';
 
 export default function Page() {
 	const dispatch = useDispatch();
 	const [search, setSearch] = useState('');
+	// const [sidebarOpen, setSidebarOpen] = useState(true);
 	const categoryId = useSelector(state => state.products.category);
 	const history = useHistory();
 
@@ -35,11 +37,14 @@ export default function Page() {
 							onChange={({target}) => {
 								setSearch(target.value);
 							}}
-						/>
-						<button type="button" className="menuBtn">
+						/> 
+						<button
+						type="button"
+						className="menuBtn"
+						// onClick={() => setSidebarOpen(true)}
+						>
 							<MenuIcon />
 						</button>
-						
 							<button
 								type="button"
 								onClick={() => {

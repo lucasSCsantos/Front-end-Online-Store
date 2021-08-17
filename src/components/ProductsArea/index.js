@@ -58,7 +58,7 @@ export default function Page() {
 		products.length > 0 
 		? <Products>
 				{products.slice(quant - 16, quant).map((product, index) => (
-					<Product product={product} index={index} />
+					<Product product={product} key={index} />
 				))}
 				<Pages>
 					<Pagination count={count} onChange={changePage} shape="rounded" />

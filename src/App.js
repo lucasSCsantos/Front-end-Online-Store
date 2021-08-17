@@ -1,5 +1,5 @@
-import React from 'react';
-import { Route, Switch } from 'react-router';
+import React, { useEffect } from 'react';
+import { Route, Switch, useLocation } from 'react-router';
 import Home from './pages/Home'
 import ProductPage from './pages/ProductPage'
 import ProductsByCategory from './components/ProductsByCategory'
@@ -7,8 +7,19 @@ import ProductsBySearch from './components/ProductsBySearch'
 import Header from './components/Header';
 import Categories from './components/Categories';
 import './App.css';
+import { useSelector } from 'react-redux';
 
 function App() {
+  const { pathname } = useLocation();
+  const productPageTitle = useSelector(state => state.products.product.title);
+  const categoryPageTitle = useSelector(state => state.products.category);
+  useEffect(() => {
+    const condition = pathname.includes('category');
+    pathname === '/' 
+      ? document.title = "Alser.kz" 
+        : document.title = condition ? categoryPageTitle : productPageTitle;
+  }, [pathname]);
+
   return (
     <div>
       <Header />

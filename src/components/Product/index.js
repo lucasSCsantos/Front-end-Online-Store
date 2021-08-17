@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import { getDetails } from '../../action';
 import { Product, Img } from './styled';
 
-export default function Page({index, product}) {
+export default function Page({product}) {
 	const dispatch = useDispatch();
 	return (
-			<Product key={index}>
+			<Product>
 				<Link
 					className="details"
 					to={ `/product/${encodeURIComponent(product.title.replace(/\s/g, '-').toLowerCase())}`}
