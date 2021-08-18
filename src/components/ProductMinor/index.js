@@ -5,11 +5,12 @@ import { getDetails } from '../../action';
 import { Product, Img } from './styled';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import StarRatings from 'react-star-ratings';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 
 export default function Page({index, product}) {
 	const dispatch = useDispatch();
 	const productRate = localStorage.productRates
-	? JSON.parse(localStorage.productRates)[product.title] : 0;
+	? JSON.parse(localStorage.productRates)[product.id] : 0;
 	return (
 			<Product key={index}>
 				<Link
@@ -36,7 +37,24 @@ export default function Page({index, product}) {
 				>
 					{product.title.slice(0, 50)}
 				</Link>
-				<p className="product-price">R$	<span>{product.price.toFixed(2)}</span></p>
+				<div className="product-m-bottom">
+					<button type="button" className="m-left">
+						<FavoriteBorderIcon style={{
+							position: 'absolute',
+							left: '10px',
+						}} />
+						<p>Curtir</p>
+					</button>
+					<p className="product-m-price">R$	<span>{product.price.toFixed(2)}</span></p>
+					<button type="button" className="m-right">
+						<p>Comprar</p>
+						<ShoppingCartIcon style={{
+							position: 'absolute',
+							right: '10px',
+						}} />
+					</button>
+				</div>
+				{/* <p className="product-price">R$	<span>{product.price.toFixed(2)}</span></p> */}
 			</Product>
 	)
 }

@@ -4,12 +4,13 @@ import { Container, RightTop, Info, Price, PriceBottom } from './styled';
 import LocalShippingOutlinedIcon from '@material-ui/icons/LocalShippingOutlined';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import StarRatings from 'react-star-ratings';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 
 export default function Page() {
 	const product = useSelector(state => state.products.product)
 	const { title, thumbnail, price, accepts_mercadopago, shipping, id, available_quantity } = product;
 	const productRate = localStorage.productRates
-		? JSON.parse(localStorage.productRates)[title] : 0;
+		? JSON.parse(localStorage.productRates)[id] : 0;
 	console.log(productRate)
 	console.log(product);
 	return (
@@ -65,13 +66,20 @@ export default function Page() {
 						</div>
 						<small>Este produto {accepts_mercadopago ? 'aceita' : 'não Aceita'} mercado pago</small>
 						<PriceBottom>
-							<button className="addToCart">
+							<button type="button" className="addToCart">
 								<p>Comprar</p>
 								<ShoppingCartIcon style={{
 									position: 'absolute',
 									right: '10px',
 								}} />
 							</button>
+							{/* <button type="button" className="favorite">
+								<FavoriteBorderIcon style={{
+									position: 'absolute',
+									left: '10px',
+								}} />
+								<p>Curtir</p>
+							</button> */}
 						</PriceBottom>
 					</Price>
 					<div className="links">

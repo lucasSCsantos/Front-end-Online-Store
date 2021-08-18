@@ -35,22 +35,45 @@ export const Product = styled.div`
 		top: 248px;
 		z-index: 10;
 		.left {
+			cursor: pointer;
 			height: 55px;
 			width: 55px;
 			border: none;
 			border-radius: 0 50px 50px 0;
 			position: absolute;
-			right: 206px;
+			right: 207px;
 			border: 5px solid #fbfbfb;
 			border-left: none;
+			background-color: #FBE9E7;
+			transition: ease 0.2s;
+			display: flex;
+			align-items: center;
+			font-weight: 700;
+			color: #F6612F;
+			p {
+				opacity: 0;
+				margin-left: 40px;
+				transition: opacity 0.1s ease-in-out;
+			}
+			&:hover {
+				width: 110px;
+				position: absolute;
+				right: 151.5px;
+				transition: ease 0.2s;
+				p {
+					margin-left: 40px;
+					opacity: 1;
+					transition: opacity 0.1s ease-in-out;
+				}
+			}
 		}
 
 		.right {
+			cursor: pointer;
 			height: 55px;
 			width: 55px;
 			border: 5px solid #fbfbfb;
 			border-right: none;
-
 			background-color: #E6F4E7;
 			border-radius: 50px 0 0 50px;
 			position: relative;
@@ -64,6 +87,7 @@ export const Product = styled.div`
 			p {
 				opacity: 0;
 				transition: opacity 0.1s ease-in-out;
+				margin-right: 40px;
 			}
 			&:hover {
 				width: 110px;
