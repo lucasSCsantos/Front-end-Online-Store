@@ -6,6 +6,7 @@ import { Product, Img } from './styled';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import StarRatings from 'react-star-ratings';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import addToCart from '../../helpers/addToCart';
 
 export default function Page({index, product}) {
 	const dispatch = useDispatch();
@@ -46,7 +47,11 @@ export default function Page({index, product}) {
 						<p>Curtir</p>
 					</button>
 					<p className="product-m-price">R$	<span>{product.price.toFixed(2)}</span></p>
-					<button type="button" className="m-right">
+					<button
+						type="button"
+						className="m-right"
+						onClick={() => addToCart(product)}
+					>
 						<p>Comprar</p>
 						<ShoppingCartIcon style={{
 							position: 'absolute',

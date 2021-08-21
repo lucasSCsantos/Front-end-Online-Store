@@ -6,6 +6,7 @@ import ProductsByCategory from './components/ProductsByCategory'
 import ProductsBySearch from './components/ProductsBySearch'
 import Header from './components/Header';
 import Categories from './components/Categories';
+import Cart from './pages/Cart';
 import './App.css';
 import { useSelector } from 'react-redux';
 
@@ -13,12 +14,24 @@ function App() {
   const { pathname } = useLocation();
   const productPageTitle = useSelector(state => state.products.product.title);
   const categoryPageTitle = useSelector(state => state.products.category);
+  const queryPageTitle = useSelector(state => state.products.query);
   useEffect(() => {
     const condition = pathname.includes('category');
-    pathname === '/' 
+    pathname === '/' || pathname.includes('search')
       ? document.title = "Alser.kz" 
         : document.title = condition ? categoryPageTitle : productPageTitle;
-  }, [pathname]);
+    if (pathname === '/') {
+      document.title = "Alser.kz"
+    } else if (pathname.includes('search')) {
+      document.title = `Resultados de pesquisa para ${queryPageTitle}`
+    } else if (pathname.includes('category')) {
+      document.title = categoryPageTitle;
+    } else if (pathname.includes('cart')) {
+      document.title = 'Carrinho';
+    } else {
+      document.title = productPageTitle;
+    }
+  }, [pathname])
 
   return (
     <div>
@@ -40,6 +53,11 @@ function App() {
           path="/search/:id"
           exact
           render={ (props) => <ProductsBySearch { ...props } /> }
+        />
+        <Route
+          path="/cart"
+          exact
+          render={ (props) => <Cart { ...props } />}
         />
       </Switch>
     </div>

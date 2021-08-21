@@ -28,6 +28,7 @@ export const Product = styled.div`
 		text-decoration: none;
 		color: black;
 		margin-top: 5px;
+		line-height: 25px;
 		&:hover {
 			color: #388E3B;
 		}
@@ -40,10 +41,11 @@ export const Product = styled.div`
 		justify-content: center;
 		width: 222px;
 		margin-left: -12px;
-		top: 288px;
-		/* background-color: white; */
-		height: 55px;
+		top: 286px;
+		background-color: white;
+		height: 57px;
 		.m-left {
+			top: 1px;
 			cursor: pointer;
 			height: 55px;
 			width: 55px;
@@ -84,6 +86,7 @@ export const Product = styled.div`
 			overflow: hidden;
 			align-items: center;
 			position: absolute;
+			top: 1px;
 			height: 55px;
 			width: 55px;
 			left: 168px;

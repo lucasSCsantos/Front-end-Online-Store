@@ -5,7 +5,7 @@ import { fetchProducts, search_action } from '../../action';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import { Link, useHistory } from 'react-router-dom';
-import Sidebar from 'react-sidebar';
+import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 
 export default function Page() {
 	const dispatch = useDispatch();
@@ -14,22 +14,26 @@ export default function Page() {
 	const categoryId = useSelector(state => state.products.category);
 	const history = useHistory();
 
-	const searchProducts = async () => {
-		if (search) {
-			dispatch(fetchProducts('CATEGORY_ID', search))
-		}
+	const searchProducts = async (e) => {
+		dispatch(fetchProducts('CATEGORY_ID', search))
+		dispatch(search_action(search));
+		setSearch('');
+		history.push(`/search/${search}`);
+		e.preventDefault()
 	};
 
 	return (
 		<Container>
 			<ContentArea>
 				<Link to="/">
-					<Logo >
+					<Logo>
 						Alser.kz
 					</Logo>
 				</Link>
 				<Search>
-					<form>
+					<form onSubmit={(event) => {
+						searchProducts(event);
+					}}>
 						<input
 							type="text"
 							placeholder="Encontre o produto"
@@ -41,20 +45,11 @@ export default function Page() {
 						<button
 						type="button"
 						className="menuBtn"
-						// onClick={() => setSidebarOpen(true)}
 						>
 							<MenuIcon />
 						</button>
 							<button
-								type="button"
-								onClick={() => {
-									if (search) {
-										searchProducts();
-										dispatch(search_action(search));
-										history.push(`/search/${search}`);
-										setSearch('');
-									}
-								}}
+								type="submit"
 								className="searchBtn"
 							>
 								<SearchIcon />
@@ -62,7 +57,9 @@ export default function Page() {
 					</form>
 				</Search>
 				<Icons>
-					Icons
+					<Link to="/cart">
+						<ShoppingCartOutlinedIcon />
+					</Link>
 				</Icons>
 			</ContentArea>
 		</Container>

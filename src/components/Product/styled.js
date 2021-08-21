@@ -21,21 +21,19 @@ export const Product = styled.div`
 	}
 
 	.product-bottom {
-		/* justify-content: space-between; */
 		background-color: white;
 		width: 260.5px;
 		margin-left: -15px;
-		height: 55px;
-		margin-top: 40px;
+		height: 58px;
+		margin-top: 37px;
 		display: flex;
 		position: absolute;
 		justify-content: center;
-		/* bottom: 50px; */
-		/* margin-bottom: 100px; */
 		top: 248px;
 		z-index: 10;
 		.left {
 			cursor: pointer;
+			top: 1px;
 			height: 55px;
 			width: 55px;
 			border: none;
@@ -69,6 +67,7 @@ export const Product = styled.div`
 		}
 
 		.right {
+			top: 1px;
 			cursor: pointer;
 			height: 55px;
 			width: 55px;
@@ -123,6 +122,7 @@ export const Product = styled.div`
 		text-decoration: none;
 		color: black;
 		margin-top: 5px;
+		line-height: 21px;
 		&:hover {
 			color: #388E3B;
 		}

@@ -6,14 +6,12 @@ export default function Page({product}) {
 
 	const [comment, setComment] = useState('');
 	const [rating, setRating] = useState(0);
-	const [totalRating, setTotalRating] = useState(0);
 	const [comments, setComments] = useState(
 		JSON.parse(localStorage.getItem('productComments'))[product.id] 
 			? JSON.parse(localStorage.getItem('productComments'))[product.id] 
 				: []);
 	const setCommentsOnLocalStorage = (commentsArr, rate) => {
 		const productComments = JSON.parse(localStorage.getItem('productComments'));
-		// const productRates = JSON.parse(localStorage.getItem('productRates'));
 		if (productComments) {
 			localStorage.productComments = JSON.stringify({...productComments, [product.id]: commentsArr});
 		}
