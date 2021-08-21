@@ -6,6 +6,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import { Link, useHistory } from 'react-router-dom';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 
 export default function Page() {
 	const dispatch = useDispatch();
@@ -57,6 +58,7 @@ export default function Page() {
 					</form>
 				</Search>
 				<Icons>
+					<FavoriteBorderIcon />
 					<Link to="/cart">
 						<ShoppingCartOutlinedIcon />
 					</Link>

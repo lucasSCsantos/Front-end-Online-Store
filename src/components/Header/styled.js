@@ -99,4 +99,9 @@ export const Search = styled.div`
 `;
 
 export const Icons = styled.div`
+	/* background-color: turquoise; */
+	width: 150px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 `;

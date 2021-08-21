@@ -3,10 +3,9 @@ const addToCart = (product) => {
 		title: product.title,
 		price: product.price,
 		id: product.id,
-		img: product.thumbnail,
+		thumbnail: product.thumbnail,
 		count: 1,
 	}
-	// console.log(count)
 	if (localStorage.getItem('cartItems')) {
 		const cartItems = JSON.parse(localStorage.getItem('cartItems'));
 		const condition = cartItems.some(({id}) => id === product.id);
