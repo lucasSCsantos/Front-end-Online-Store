@@ -9,6 +9,7 @@ import Pagination from '@material-ui/lab/Pagination';
 export default function Page() {
 	const products = useSelector(state => state.products.productsList);
 	const loading = useSelector(state => state.products.isFetching);
+	const [isLoading, setIsLoading] = useState(false);
 	const [quant, setQuant] = useState(16);
 	const [query, setQuery] = useState('OFERTAS');
 	const [count, setCount] = useState(0);
@@ -28,6 +29,14 @@ export default function Page() {
 		setCount(prdCounts);
 	}, [products])
 
+
+	useEffect(() => {
+		setIsLoading(true)
+		setTimeout(() => {
+			setIsLoading(false)
+		}, 1000);
+	}, [quant])
+	
 	const nextPage = () => {
 		if	(quant < products.length) {
 			setQuant(quant + 16);
@@ -54,10 +63,17 @@ export default function Page() {
 		}
 	}
 
+	const loader = (
+		<div className="loaderBg">
+			<div className="loader" />
+		</div>
+	)
+
 	const productsList = (
 		products.length > 0 
 		? <Products>
-				{products.slice(quant - 16, quant).map((product, index) => (
+			{isLoading ? loader :
+				products.slice(quant - 16, quant).map((product, index) => (
 					<Product product={product} key={index} />
 				))}
 				<Pages>
@@ -73,12 +89,6 @@ export default function Page() {
 		target.classList.add('selected');
 		setQuery(target.innerHTML);
 	}
-
-	const loader = (
-		<div className="loaderBg">
-			<div className="loader" />
-		</div>
-	)
 
 	return (
 		<Container>

@@ -8,16 +8,20 @@ export const Container = styled.div`
 	width: 100%;
 	background-color: white;
 	flex-direction: column;
-
-	.loader {
-		margin-top: 100px;
-		border: 8px solid #f3f3f3; /* Light grey */
-		border-top: 8px solid #2D8946; /* Blue */
-		border-radius: 50%;
-		width: 100px;
-		height: 100px;
-		align-self: center;
-		animation: spin 1s linear infinite;
+	.loaderBg {
+		margin: 0 520px 600px;
+		/* margin-left: 520px;
+		margin-bottom: 300px; */
+		.loader {
+			margin-top: 100px;
+			border: 8px solid #f3f3f3; /* Light grey */
+			border-top: 8px solid #2D8946; /* Blue */
+			border-radius: 50%;
+			width: 100px;
+			height: 100px;
+			align-self: center;
+			animation: spin 1s linear infinite;
+		}
 	}
 
 	@keyframes spin {

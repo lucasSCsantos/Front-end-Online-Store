@@ -16,11 +16,13 @@ export default function Page() {
 	const history = useHistory();
 
 	const searchProducts = async (e) => {
-		dispatch(fetchProducts('CATEGORY_ID', search))
-		dispatch(search_action(search));
-		setSearch('');
-		history.push(`/search/${search}`);
-		e.preventDefault()
+		if (search) {
+			dispatch(fetchProducts('CATEGORY_ID', search))
+			dispatch(search_action(search));
+			setSearch('');
+			history.push(`/search/${search}`);
+			e.preventDefault()
+		}
 	};
 
 	return (

@@ -8,17 +8,25 @@ export default function Page(props) {
 	const products = useSelector(state => state.products.productsList);
 	const loading = useSelector(state => state.products.isFetching);
 	const category = useSelector(state => state.products.category);
+	const [isLoading, setIsLoading] = useState(false);
 	const [quant, setQuant] = useState(20);
 	const [count, setCount] = useState(0);
 
 	useEffect(() => {
-		const prdCounts = Math.ceil(products.length / 20)
+		const prdCounts = Math.ceil(products.length / 20);
 		setCount(prdCounts);
-	}, [products])
+	}, [products]);
 
 	useEffect(() => {
 		setQuant(20);
-	}, [category])
+	}, [category]);
+
+	useEffect(() => {
+		setIsLoading(true)
+		setTimeout(() => {
+			setIsLoading(false)
+		}, 1000);
+	}, [quant]);
 
 	const nextPage = () => {
 		if	(quant < products.length) {
@@ -49,7 +57,8 @@ export default function Page(props) {
 	const productsList = (
 		products.length > 0 
 		? <Products>
-				{products.slice(quant - 20, quant).map((product, index) => (
+			{isLoading ? <div className="loader" /> :
+				products.slice(quant - 20, quant).map((product, index) => (
 					<ProductMinor product={product} index={index} />
 				))}
 				<Pages>

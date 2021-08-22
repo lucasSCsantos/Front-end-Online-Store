@@ -18,7 +18,7 @@ export const Container = styled.div`
 	}
 
 	.loader {
-		margin-top: 100px;
+		margin: 100px 520px 600px;
 		border: 8px solid #f3f3f3; /* Light grey */
 		border-top: 8px solid #2D8946; /* Blue */
 		border-radius: 50%;
