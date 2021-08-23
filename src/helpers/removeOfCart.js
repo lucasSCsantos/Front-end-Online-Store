@@ -1,5 +1,4 @@
 const removeOfCart = (product) => {
-	console.log(product)
 		const cartItems = JSON.parse(localStorage.getItem('cartItems'));
 		let index;
 		const condition = cartItems.some((item) => {
@@ -11,7 +10,7 @@ const removeOfCart = (product) => {
 		if (condition) {
 			localStorage.cartItems = JSON.stringify([
 				...cartItems.slice(0, index), 
-				...cartItems.slice(index + 1)
+				...cartItems.slice(index + 1),
 			])
 		}
 }

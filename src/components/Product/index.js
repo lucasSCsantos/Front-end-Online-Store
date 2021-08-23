@@ -1,17 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { getDetails } from '../../action';
 import { Product, Img } from './styled';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import StarRatings from 'react-star-ratings';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 import addToCart from '../../helpers/addToCart';
+import addToFavorite from '../../helpers/addToFavorite';
 
 export default function Page({product}) {
 	const dispatch = useDispatch();
+	const history = useHistory();
+	const favoriteList = JSON.parse(localStorage.favoriteItems);
+	const [isFavorite, setIsFavorite] = useState(false);
 	const productRate = localStorage.productRates
 		? JSON.parse(localStorage.productRates)[product.id] : 0;
+
+	useEffect(() => {
+		const favorite = favoriteList.some(({id}) => id === product.id);
+		setIsFavorite(favorite);
+	}, [])
 
 	return (
 			<Product>
@@ -40,18 +50,28 @@ export default function Page({product}) {
 					{product.title}
 				</Link>
 				<div className="product-bottom">
-					<button type="button" className="left">
-						<FavoriteBorderIcon style={{
-							position: 'absolute',
-							left: '10px',
-						}} />
+					<button
+						type="button"
+						className="left"
+						onClick={() => {addToFavorite(product); setIsFavorite(!isFavorite)}}
+					>
+						{ !isFavorite ? 
+							<FavoriteBorderIcon style={{
+								position: 'absolute',
+								left: '10px',
+							}} /> : 
+							<FavoriteIcon style={{
+								position: 'absolute',
+								left: '10px',
+							}} />
+						}
 						<p>Curtir</p>
 					</button>
 					<p className="product-price">R$	<span>{product.price.toFixed(2)}</span></p>
 					<button
 						type="button"
 						className="right"
-						onClick={() => addToCart(product)}
+						onClick={() => {addToCart(product); history.push('/cart')}}
 					>
 						<p>Comprar</p>
 						<ShoppingCartIcon style={{

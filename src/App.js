@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react';
 import { Route, Switch, useLocation } from 'react-router';
-import Home from './pages/Home'
-import ProductPage from './pages/ProductPage'
-import ProductsByCategory from './components/ProductsByCategory'
-import ProductsBySearch from './components/ProductsBySearch'
+import Home from './pages/Home';
+import ProductPage from './pages/ProductPage';
+import ProductsByCategory from './components/ProductsByCategory';
+import ProductsBySearch from './components/ProductsBySearch';
 import Header from './components/Header';
 import Categories from './components/Categories';
 import Cart from './pages/Cart';
 import './App.css';
 import { useSelector } from 'react-redux';
+import Favorite from './pages/Favorite';
 
 function App() {
   const { pathname } = useLocation();
@@ -58,6 +59,11 @@ function App() {
           path="/cart"
           exact
           render={ (props) => <Cart { ...props } />}
+        />
+        <Route
+          path="/favorites"
+          exact
+          render={ (props) => <Favorite { ...props } />}
         />
       </Switch>
     </div>

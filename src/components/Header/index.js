@@ -1,19 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Logo, Search, Icons, ContentArea } from './styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts, search_action } from '../../action';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 
 export default function Page() {
 	const dispatch = useDispatch();
 	const [search, setSearch] = useState('');
-	// const [sidebarOpen, setSidebarOpen] = useState(true);
-	const categoryId = useSelector(state => state.products.category);
+	const [cartCount, setCartCount] = useState(0);
+	const [favCount, setFavCount] = useState(0);
 	const history = useHistory();
+	const { pathname } = useLocation();
 
 	const searchProducts = async (e) => {
 		if (search) {
@@ -21,9 +22,16 @@ export default function Page() {
 			dispatch(search_action(search));
 			setSearch('');
 			history.push(`/search/${search}`);
-			e.preventDefault()
+			e.preventDefault();
 		}
 	};
+
+	useEffect(() => {
+		const cartItems = JSON.parse(localStorage.getItem('cartItems'));
+		const favoriteItems = JSON.parse(localStorage.getItem('favoriteItems'));
+		setCartCount(cartItems.length);
+		setFavCount(favoriteItems.length);
+	}, [pathname])
 
 	return (
 		<Container>
@@ -60,8 +68,12 @@ export default function Page() {
 					</form>
 				</Search>
 				<Icons>
-					<FavoriteBorderIcon />
+					<Link to="/favorites">
+						{favCount > 0 && <div className="fav-count">{favCount}</div>}
+						<FavoriteBorderIcon />
+					</Link>
 					<Link to="/cart">
+						{cartCount > 0 && <div className="cart-count">{cartCount}</div>}
 						<ShoppingCartOutlinedIcon />
 					</Link>
 				</Icons>

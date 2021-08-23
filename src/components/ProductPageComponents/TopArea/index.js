@@ -5,14 +5,16 @@ import LocalShippingOutlinedIcon from '@material-ui/icons/LocalShippingOutlined'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import StarRatings from 'react-star-ratings';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import addToCart from '../../../helpers/addToCart';
+import { useHistory } from 'react-router';
 
 export default function Page() {
 	const product = useSelector(state => state.products.product)
 	const { title, thumbnail, price, accepts_mercadopago, shipping, id, available_quantity } = product;
 	const productRate = localStorage.productRates
 		? JSON.parse(localStorage.productRates)[id] : 0;
-	console.log(productRate)
-	console.log(product);
+	const history = useHistory();
+
 	return (
 		<Container>
 				<Info>
@@ -66,7 +68,11 @@ export default function Page() {
 						</div>
 						<small>Este produto {accepts_mercadopago ? 'aceita' : 'não Aceita'} mercado pago</small>
 						<PriceBottom>
-							<button type="button" className="addToCart">
+							<button
+								type="button"
+								className="addToCart"
+								onClick={() => {addToCart(product); history.push('/cart')}}
+							>
 								<p>Comprar</p>
 								<ShoppingCartIcon style={{
 									position: 'absolute',
