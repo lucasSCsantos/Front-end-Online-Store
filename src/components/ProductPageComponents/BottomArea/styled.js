@@ -34,7 +34,7 @@ export const Comment = styled.div`
 		padding: 10px 15px;
 		box-sizing: border-box;
 		transition: ease 0.05s;
-		margin-right: 15px;
+		margin-right: 30px;
 		&:focus {
 			border: 2px solid #34A153;
 			/* outline: 2px solid #34A153; */
@@ -44,7 +44,7 @@ export const Comment = styled.div`
 	}
 
 	button {
-		margin: 0 15px;
+		margin: 0 0 0 30px;
 		height: 50px;
 		border: none;
 		cursor: pointer;

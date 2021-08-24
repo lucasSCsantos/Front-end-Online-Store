@@ -46,7 +46,7 @@ export default function Page({product}) {
 						rating={rating}
 						starRatedColor="#F37B35"
 						starHoverColor="#F37B35"
-						starDimension="25px"
+						starDimension="22px"
 						changeRating={setRating}
 						numberOfStars={5}
 						name='rating'

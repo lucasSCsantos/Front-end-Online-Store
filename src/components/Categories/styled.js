@@ -5,14 +5,40 @@ export const Container = styled.div`
   justify-content: center;
   width: 100%;
   height: 120px;
+  position: relative;
+
+  .previous, .next {
+    cursor: pointer;
+    position: absolute;
+    height: 20px;
+    background-color: white;
+    border-radius: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    top: calc(50% - 10px);
+    z-index: 10;
+    left: 340px;
+    /* font-size: 50px; */
+  }
+
+  .next {
+    left: unset;
+    right: 340px;
+  }
 `;
 
 export const Categories = styled.div`
+  overflow: hidden;
   display: flex;
   justify-content: space-between;
+  /* background-color: rebeccapurple; */
   width: 61%;
   height: 120px;
   align-items: center;
+  position: relative;
+  transition: ease 0.2s;
+  scroll-behavior: smooth;
 `;
 
 export const Category = styled.div`
@@ -23,11 +49,14 @@ export const Category = styled.div`
   font-size: 12px;
   width: 74.513px;
   overflow: hidden;
+  transition: ease 0.2s;
   height: 70px;
   display: flex;
   align-items: flex-end;
+  margin-right: 11.25px;
+  /* z-index: 10; */
   cursor: pointer;
-  
+  position: relative;
   p {
     color: black;
     display: flex;

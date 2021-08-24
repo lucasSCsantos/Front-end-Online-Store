@@ -54,19 +54,7 @@ export const Search = styled.div`
 			border: solid 1px #F2F3F5;
 			color: #34a153;
 			background-color: #FBFBFB;
-			/* position: absolute; */
 		}
-
-		/* .headerSIde {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			outline: none;
-			border: solid 1px #F2F3F5;
-			color: #34a153;
-			/* background-color: #FBFBFB; */
-			/* background-color: blanchedalmond;
-		} */ 
 
 		.search, .searchBtn {
 			display: flex;

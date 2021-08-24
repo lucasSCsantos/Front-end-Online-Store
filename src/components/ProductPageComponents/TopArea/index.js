@@ -1,19 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { Container, RightTop, Info, Price, PriceBottom } from './styled';
 import LocalShippingOutlinedIcon from '@material-ui/icons/LocalShippingOutlined';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import StarRatings from 'react-star-ratings';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 import addToCart from '../../../helpers/addToCart';
 import { useHistory } from 'react-router';
+import addToFavorite from '../../../helpers/addToFavorite';
 
 export default function Page() {
 	const product = useSelector(state => state.products.product)
 	const { title, thumbnail, price, accepts_mercadopago, shipping, id, available_quantity } = product;
+	const [isFavorite, setIsFavorite] = useState(false);
+	const [isInCart, setIsInCart] = useState(false);
 	const productRate = localStorage.productRates
 		? JSON.parse(localStorage.productRates)[id] : 0;
 	const history = useHistory();
+	const cartList = JSON.parse(localStorage.getItem('cartItems'));
+	const favoriteList = JSON.parse(localStorage.getItem('favoriteItems'));
+
+	useEffect(() => {
+		const favorite = favoriteList && favoriteList.some(({id}) => id === product.id);
+		const cart = cartList && cartList.some(({id}) => id === product.id);
+		setIsInCart(cart);
+		setIsFavorite(favorite);
+	}, [])
 
 	return (
 		<Container>
@@ -70,14 +84,37 @@ export default function Page() {
 						<PriceBottom>
 							<button
 								type="button"
+								className="addFavorite"
+								onClick={() => {addToFavorite(product); setIsFavorite(!isFavorite)}}
+							>
+								{ !isFavorite ? 
+									<FavoriteBorderIcon style={{
+										position: 'absolute',
+										left: '10px',
+									}} /> : 
+									<FavoriteIcon style={{
+										position: 'absolute',
+										left: '10px',
+									}} />
+								}
+								<p>Curtir</p>
+							</button>
+							<button
+								type="button"
 								className="addToCart"
-								onClick={() => {addToCart(product); history.push('/cart')}}
+								onClick={() => {addToCart(product); ; setIsInCart(true)}}
 							>
 								<p>Comprar</p>
-								<ShoppingCartIcon style={{
-									position: 'absolute',
-									right: '10px',
-								}} />
+								{	isInCart ?
+									<ShoppingCartIcon style={{
+										position: 'absolute',
+										right: '10px',
+									}} /> :
+									<ShoppingCartOutlinedIcon style={{
+										position: 'absolute',
+										right: '10px',
+									}} />
+								}
 							</button>
 							{/* <button type="button" className="favorite">
 								<FavoriteBorderIcon style={{
@@ -88,9 +125,6 @@ export default function Page() {
 							</button> */}
 						</PriceBottom>
 					</Price>
-					<div className="links">
-
-					</div>
 				</RightTop>
 			</Container>
 	)

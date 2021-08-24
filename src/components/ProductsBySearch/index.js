@@ -59,7 +59,7 @@ export default function Page() {
 		? <Products>
 			{isLoading ? <div className="loader" /> :
 				products.slice(quant - 20, quant).map((product, index) => (
-					<ProductMinor product={product} index={index} />
+					<ProductMinor product={product} key={index} />
 				))}
 				<Pages>
 					<Pagination count={count} onChange={changePage} shape="rounded"/>

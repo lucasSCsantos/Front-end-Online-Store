@@ -4,27 +4,32 @@ import { Link, useHistory } from 'react-router-dom';
 import { getDetails } from '../../action';
 import { Product, Img } from './styled';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import StarRatings from 'react-star-ratings';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import addToCart from '../../helpers/addToCart';
 import addToFavorite from '../../helpers/addToFavorite';
 
-export default function Page({index, product}) {
+export default function Page({product}) {
 	const dispatch = useDispatch();
 	const history = useHistory();
-	const favoriteList = JSON.parse(localStorage.favoriteItems);
+	const cartList = JSON.parse(localStorage.getItem('cartItems'));
+	const favoriteList = JSON.parse(localStorage.getItem('favoriteItems'));
 	const [isFavorite, setIsFavorite] = useState(false);
+	const [isInCart, setIsInCart] = useState(false);
 	const productRate = localStorage.productRates
 	? JSON.parse(localStorage.productRates)[product.id] : 0;
 
 	useEffect(() => {
-		const favorite = favoriteList.some(({id}) => id === product.id);
+		const favorite = favoriteList && favoriteList.some(({id}) => id === product.id);
+		const cart = cartList && cartList.some(({id}) => id === product.id);
+		setIsInCart(cart);
 		setIsFavorite(favorite);
 	}, [])
 	
 	return (
-			<Product key={index}>
+			<Product>
 				<Link
 					className="details"
 					to={ `/product/${encodeURIComponent(product.title.replace(/\s/g, '-').toLowerCase())}`}
@@ -71,13 +76,19 @@ export default function Page({index, product}) {
 					<button
 						type="button"
 						className="m-right"
-						onClick={() => {addToCart(product); history.push('/cart')}}
+						onClick={() => {addToCart(product); history.push('/cart'); setIsInCart(true)}}
 					>
 						<p>Comprar</p>
-						<ShoppingCartIcon style={{
-							position: 'absolute',
-							right: '10px',
-						}} />
+						{	isInCart ?
+							<ShoppingCartIcon style={{
+								position: 'absolute',
+								right: '10px',
+							}} /> :
+							<ShoppingCartOutlinedIcon style={{
+								position: 'absolute',
+								right: '10px',
+							}} />
+						}
 					</button>
 				</div>
 				{/* <p className="product-price">R$	<span>{product.price.toFixed(2)}</span></p> */}

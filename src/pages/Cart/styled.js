@@ -67,6 +67,21 @@ export const CartItem = styled.div`
 		}
 	}
 
+	.item-delete {
+		width: 131px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		/* background-color: red; */
+
+		button {
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+			font-size: 20px;
+		}
+	}
+
 	.cart-product-price {
 		font-size: 12px !important;
 		font-weight: 700;

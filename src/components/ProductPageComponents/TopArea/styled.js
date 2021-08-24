@@ -34,8 +34,8 @@ export const Info = styled.div`
     box-sizing: border-box;
     /* background-color: blueviolet; */
     img {
-      width: 380px;
-      height: 380px;
+      min-width: 300px;
+      min-height: 300px;
       /* object-fit: cover; */
     }
   }
@@ -138,6 +138,41 @@ export const PriceBottom = styled.div`
   display: flex;
   position: absolute;
   justify-content: flex-end;
+
+  .addFavorite {
+			cursor: pointer;
+			top: 1px;
+			height: 55px;
+			width: 55px;
+			border: none;
+			border-radius: 0 50px 50px 0;
+			position: absolute;
+			right: 230px;
+			border: 5px solid #fbfbfb;
+			border-left: none;
+			background-color: #FBE9E7;
+			transition: ease 0.2s;
+			display: flex;
+			align-items: center;
+			font-weight: 700;
+			color: #F6612F;
+			p {
+				opacity: 0;
+				margin-left: 40px;
+				transition: opacity 0.1s ease-in-out;
+			}
+			&:hover {
+				width: 110px;
+				position: absolute;
+				right: 174.5px;
+				transition: ease 0.2s;
+				p {
+					margin-left: 40px;
+					opacity: 1;
+					transition: opacity 0.1s ease-in-out;
+				}
+			}
+		}
 
   .addToCart {
     position: relative;
