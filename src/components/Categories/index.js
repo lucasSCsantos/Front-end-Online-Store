@@ -14,9 +14,23 @@ import CameraAltOutlinedIcon from '@material-ui/icons/CameraAltOutlined';
 import MotorcycleOutlinedIcon from '@material-ui/icons/MotorcycleOutlined';
 import HouseOutlinedIcon from '@material-ui/icons/HouseOutlined';
 import SmartphoneIcon from '@material-ui/icons/Smartphone';
-import BuildOutlinedIcon from '@material-ui/icons/BuildOutlined';
+import ApartmentOutlinedIcon from '@material-ui/icons/ApartmentOutlined';
 import KitchenIcon from '@material-ui/icons/Kitchen';
 import DevicesOtherOutlinedIcon from '@material-ui/icons/DevicesOtherOutlined';
+import SportsSoccerOutlinedIcon from '@material-ui/icons/SportsSoccerOutlined';
+import BuildOutlinedIcon from '@material-ui/icons/BuildOutlined';
+import VideogameAssetOutlinedIcon from '@material-ui/icons/VideogameAssetOutlined';
+import HomeWorkOutlinedIcon from '@material-ui/icons/HomeWorkOutlined';
+import BusinessOutlinedIcon from '@material-ui/icons/BusinessOutlined';
+import ComputerOutlinedIcon from '@material-ui/icons/ComputerOutlined';
+import ConfirmationNumberOutlinedIcon from '@material-ui/icons/ConfirmationNumberOutlined';
+import MusicNoteOutlinedIcon from '@material-ui/icons/MusicNoteOutlined';
+import AccessTimeOutlinedIcon from '@material-ui/icons/AccessTimeOutlined';
+import MenuBookOutlinedIcon from '@material-ui/icons/MenuBookOutlined';
+import OndemandVideoOutlinedIcon from '@material-ui/icons/OndemandVideoOutlined';
+import LocalHospitalOutlinedIcon from '@material-ui/icons/LocalHospitalOutlined';
+import RoomServiceOutlinedIcon from '@material-ui/icons/RoomServiceOutlined';
+import MoreHorizOutlinedIcon from '@material-ui/icons/MoreHorizOutlined';
 import { Link } from 'react-router-dom';
 import { Categories, Category, Container } from './styled';
 import { getCategories } from '../../services/api';
@@ -38,35 +52,24 @@ export default function Page() {
     { icon: <MotorcycleOutlinedIcon /> },
     { icon: <HouseOutlinedIcon /> },
     { icon: <SmartphoneIcon /> },
-    { icon: <BuildOutlinedIcon /> },
+    { icon: <ApartmentOutlinedIcon /> },
     { icon: <KitchenIcon /> },
     { icon: <DevicesOtherOutlinedIcon /> },
-    { icon: <ChildFriendlyOutlinedIcon /> },
-    { icon: <SpaOutlinedIcon /> },
-    { icon: <DirectionsBikeOutlinedIcon /> },
+    { icon: <SportsSoccerOutlinedIcon /> },
+    { icon: <BuildOutlinedIcon /> },
     { icon: <CardGiftcardOutlinedIcon /> },
-    { icon: <CameraAltOutlinedIcon /> },
-    { icon: <LocalShippingOutlinedIcon /> },
-    { icon: <FastfoodOutlinedIcon /> },
-    { icon: <PetsOutlinedIcon /> },
-    { icon: <AlbumOutlinedIcon /> },
-    { icon: <BrushOutlinedIcon /> },
-    { icon: <ChildFriendlyOutlinedIcon /> },
-    { icon: <SpaOutlinedIcon /> },
-    { icon: <DirectionsBikeOutlinedIcon /> },
-    { icon: <CardGiftcardOutlinedIcon /> },
-    { icon: <CameraAltOutlinedIcon /> },
-    { icon: <DriveEtaOutlinedIcon /> },
-    { icon: <LocalShippingOutlinedIcon /> },
-    { icon: <FastfoodOutlinedIcon /> },
-    { icon: <PetsOutlinedIcon /> },
-    { icon: <AlbumOutlinedIcon /> },
-    { icon: <BrushOutlinedIcon /> },
-    { icon: <ChildFriendlyOutlinedIcon /> },
-    { icon: <SpaOutlinedIcon /> },
-    { icon: <DirectionsBikeOutlinedIcon /> },
-    { icon: <CardGiftcardOutlinedIcon /> },
-    { icon: <CameraAltOutlinedIcon /> },
+    { icon: <VideogameAssetOutlinedIcon /> },
+    { icon: <HomeWorkOutlinedIcon /> },
+    { icon: <BusinessOutlinedIcon /> },
+    { icon: <ComputerOutlinedIcon /> },
+    { icon: <ConfirmationNumberOutlinedIcon /> },
+    { icon: <MusicNoteOutlinedIcon /> },
+    { icon: <AccessTimeOutlinedIcon /> },
+    { icon: <MenuBookOutlinedIcon /> },
+    { icon: <OndemandVideoOutlinedIcon /> },
+    { icon: <LocalHospitalOutlinedIcon /> },
+    { icon: <RoomServiceOutlinedIcon /> },
+    { icon: <MoreHorizOutlinedIcon /> },
   ];
 
   const [categories, setCategories] = useState([]);

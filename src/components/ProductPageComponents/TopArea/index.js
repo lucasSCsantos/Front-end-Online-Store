@@ -72,13 +72,13 @@ export default function Page() {
 				<RightTop>
 					<Price> 
 						<div className="priceArea">
-							{shipping.free_shipping &&
+							{shipping.free_shipping &
 							<span className="shipping">
 								<LocalShippingOutlinedIcon />
 								Frete Grátis
 							</span>
 							}
-							<p className="price">R$	<span>{price.toFixed(2)}</span></p>
+							<p className="price">R$	<span>{price ? price.toFixed(2) : 0}</span></p>
 						</div>
 						<small>Este produto {accepts_mercadopago ? 'aceita' : 'não Aceita'} mercado pago</small>
 						<PriceBottom>
@@ -116,13 +116,6 @@ export default function Page() {
 									}} />
 								}
 							</button>
-							{/* <button type="button" className="favorite">
-								<FavoriteBorderIcon style={{
-									position: 'absolute',
-									left: '10px',
-								}} />
-								<p>Curtir</p>
-							</button> */}
 						</PriceBottom>
 					</Price>
 				</RightTop>

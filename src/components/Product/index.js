@@ -72,7 +72,7 @@ export default function Page({product}) {
 						}
 						<p>Curtir</p>
 					</button>
-					<p className="product-price">R$	<span>{product.price.toFixed(2)}</span></p>
+					<p className="product-price">R$	<span>{product.price ? product.price.toFixed(2) : 0}</span></p>
 					<button
 						type="button"
 						className="right"
