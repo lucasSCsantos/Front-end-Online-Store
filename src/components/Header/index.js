@@ -26,12 +26,12 @@ export default function Page() {
 		}
 	};
 
-	// useEffect(() => {
-	// 	const cartItems = JSON.parse(localStorage.getItem('cartItems'));
-	// 	const favoriteItems = JSON.parse(localStorage.getItem('favoriteItems'));
-	// 	if (cartItems) setCartCount(cartItems.length);
-	// 	if (favoriteItems) setFavCount(favoriteItems.length);
-	// }, [pathname])
+	useEffect(() => {
+		const cartItems = JSON.parse(localStorage.getItem('cartItems'));
+		const favoriteItems = JSON.parse(localStorage.getItem('favoriteItems'));
+		if (cartItems) setCartCount(cartItems.length);
+		if (favoriteItems) setFavCount(favoriteItems.length);
+	}, [pathname])
 
 	return (
 		<Container>
@@ -59,12 +59,12 @@ export default function Page() {
 						>
 							<MenuIcon />
 						</button>
-							<button
-								type="submit"
-								className="searchBtn"
-							>
-								<SearchIcon />
-							</button>
+						<button
+							type="submit"
+							className="searchBtn"
+						>
+							<SearchIcon />
+						</button>
 					</form>
 				</Search>
 				<Icons>

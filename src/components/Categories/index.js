@@ -9,6 +9,7 @@ import BrushOutlinedIcon from '@material-ui/icons/BrushOutlined';
 import ChildFriendlyOutlinedIcon from '@material-ui/icons/ChildFriendlyOutlined';
 import SpaOutlinedIcon from '@material-ui/icons/SpaOutlined';
 import DirectionsBikeOutlinedIcon from '@material-ui/icons/DirectionsBikeOutlined';
+import LocalMallOutlinedIcon from '@material-ui/icons/LocalMallOutlined';
 import CardGiftcardOutlinedIcon from '@material-ui/icons/CardGiftcardOutlined';
 import CameraAltOutlinedIcon from '@material-ui/icons/CameraAltOutlined';
 import MotorcycleOutlinedIcon from '@material-ui/icons/MotorcycleOutlined';
@@ -47,7 +48,7 @@ export default function Page() {
     { icon: <ChildFriendlyOutlinedIcon /> },
     { icon: <SpaOutlinedIcon /> },
     { icon: <DirectionsBikeOutlinedIcon /> },
-    { icon: <CardGiftcardOutlinedIcon /> },
+    { icon: <LocalMallOutlinedIcon /> },
     { icon: <CameraAltOutlinedIcon /> },
     { icon: <MotorcycleOutlinedIcon /> },
     { icon: <HouseOutlinedIcon /> },

@@ -6,6 +6,7 @@ import ProductsByCategory from './components/ProductsByCategory';
 import ProductsBySearch from './components/ProductsBySearch';
 import Header from './components/Header';
 import Categories from './components/Categories';
+import SideBar from './components/SideBar';
 import Cart from './pages/Cart';
 import './App.css';
 import { useSelector } from 'react-redux';
@@ -36,6 +37,7 @@ function App() {
 
   return (
     <div>
+      {/* <SideBar /> */}
       <Header />
       <Categories />
       <Switch>
