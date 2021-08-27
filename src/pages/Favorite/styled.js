@@ -2,10 +2,11 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
+	min-height: 80vh;
 	width: 100%;
-	background-color: #FBFBFB;
+	background-color: #fbfbfb;
 	flex-direction: column;
 
 	.top {
@@ -14,18 +15,22 @@ export const Container = styled.div`
 		color: #5A5555;
 		font-size: 20px;
 		font-weight: 800;
-		/* background-color: #2D8946; */
 	}
 
-	.loader {
-		margin: 100px 520px 600px;
-		border: 8px solid #f3f3f3; /* Light grey */
-		border-top: 8px solid #2D8946; /* Blue */
-		border-radius: 50%;
-		width: 100px;
-		height: 100px;
-		align-self: center;
-		animation: spin 1s linear infinite;
+	.loaderBg {
+		margin: 0 520px 600px;
+		/* margin-left: 520px;
+		margin-bottom: 300px; */
+		.loader {
+			margin-top: 100px;
+			border: 8px solid #f3f3f3; /* Light grey */
+			border-top: 8px solid #2D8946; /* Blue */
+			border-radius: 50%;
+			width: 100px;
+			height: 100px;
+			align-self: center;
+			animation: spin 1s linear infinite;
+		}
 	}
 
 	@keyframes spin {
@@ -38,9 +43,8 @@ export const Products = styled.div`
 	width: 1170px;
 	display: flex;
 	flex-wrap: wrap;
-	/* background-color: hotpink; */
 	/* justify-content: space-between; */
-	padding: 5px 0 70px 0;
+	padding: 35px 0 70px 0;
 `;
 
 export const Button = styled.div`
@@ -50,17 +54,28 @@ export const Button = styled.div`
 	align-items: center;
 	width: 100%;
 	height: 38px;
-	button {
-		height: 100%;
-		width: 61%;
-		border: none;
+	.selected {
+		cursor: pointer;
 		background-color: #34A153;
-		border-radius: 5px;
 		box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 5px;
+		border-radius: 5px;
 		color: white;
+		border: none;
 		transition: 100ms ease;
 		&:hover {
 			background-color: #2d8946;
+			transition: 100ms ease;
+		}
+	}
+	button {
+		cursor: pointer;
+		border: none;
+		background-color: transparent;
+		height: 100%;
+		width: calc(61%/3);
+		transition: 100ms ease;
+		&:hover {
+			background-color: #ededed;
 			transition: 100ms ease;
 		}
 	}

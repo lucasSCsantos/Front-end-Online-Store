@@ -1,15 +1,32 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Container, Products, Pages, TopLink } from './styled';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { Container, Products, Pages } from './styled';
 import ProductMinor from '../ProductMinor';
-
+import Pagination from '@material-ui/lab/Pagination';
 
 export default function Page() {
 	const products = useSelector(state => state.products.productsList);
 	const loading = useSelector(state => state.products.isFetching);
 	const query = useSelector(state => state.products.query);
+	const [isLoading, setIsLoading] = useState(false);
 	const [quant, setQuant] = useState(20);
-	const dispatch = useDispatch();
+	const [count, setCount] = useState(0);
+
+	useEffect(() => {
+		const prdCounts = Math.ceil(products.length / 20)
+		setCount(prdCounts);
+	}, [products]);
+
+	useEffect(() => {
+		setQuant(20);
+	}, [query]);
+
+	useEffect(() => {
+		setIsLoading(true)
+		setTimeout(() => {
+			setIsLoading(false)
+		}, 1000);
+	}, [quant]);
 
 	const nextPage = () => {
 		if	(quant < products.length) {
@@ -23,12 +40,30 @@ export default function Page() {
 		}
 	}
 
+	const changePage = (e) => {
+		const number = Number.parseFloat(e.target.innerText);
+		if (number) {
+			setQuant(number * 20);
+		} else {
+			const arrow = e.currentTarget.ariaLabel;
+			if (arrow === 'Go to previous page') {
+				prevPage();
+			} else {
+				nextPage();
+			}
+		}
+	}
+
 	const productsList = (
 		products.length > 0 
 		? <Products>
-				{products.slice(quant - 20, quant).map((product, index) => (
-					<ProductMinor product={product} index={index} />
+			{isLoading ? <div className="loader" /> :
+				products.slice(quant - 20, quant).map((product, index) => (
+					<ProductMinor product={product} key={index} />
 				))}
+				<Pages>
+					<Pagination count={count} onChange={changePage} shape="rounded"/>
+				</Pages>
 			</Products>
 		: <h1>Nada encontrado</h1>
 	)
@@ -37,17 +72,6 @@ export default function Page() {
 		<Container>
 			<p className="top">Resultados para: {query} na loja</p>
 			{ loading ? <div className="loader" /> : productsList }
-			{ (products.length && !loading) > 0 
-				? <Pages>
-						<button type="button" onClick={nextPage}>
-							+
-						</button>
-						<button type="button" onClick={prevPage}>
-							-
-						</button>
-					</Pages>
-				: null
-			}
 		</Container>
 	)
 }

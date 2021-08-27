@@ -87,4 +87,44 @@ export const Search = styled.div`
 `;
 
 export const Icons = styled.div`
+	/* background-color: turquoise; */
+	width: 80px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+	a {
+		color: black;
+	}
+	.cart-count {
+		top: -5px;
+		right: -3px;
+		position: absolute;
+		width: 15px;
+		height: 15px;
+		color: white;
+		font-weight: 700;
+		font-size: 8px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 20px;
+		background-color: #F65723;
+	}
+
+	.fav-count {
+		top: -5px;
+		left: 13px;
+		position: absolute;
+		width: 15px;
+		height: 15px;
+		color: white;
+		font-weight: 700;
+		font-size: 8px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 20px;
+		background-color: #F65723;
+	}
 `;

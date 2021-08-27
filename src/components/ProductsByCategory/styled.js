@@ -14,18 +14,17 @@ export const Container = styled.div`
 		color: #5A5555;
 		font-size: 20px;
 		font-weight: 800;
-		/* background-color: #2D8946; */
 	}
 
 	.loader {
-		margin-top: 100px;
-		border: 8px solid #f3f3f3; /* Light grey */
-		border-top: 8px solid #2D8946; /* Blue */
+		border: 8px solid #f3f3f3;
+		border-top: 8px solid #2D8946;
 		border-radius: 50%;
 		width: 100px;
 		height: 100px;
 		align-self: center;
 		animation: spin 1s linear infinite;
+		margin: 100px 520px 600px;
 	}
 
 	@keyframes spin {
@@ -38,9 +37,6 @@ export const Products = styled.div`
 	width: 1170px;
 	display: flex;
 	flex-wrap: wrap;
-
-	/* background-color: hotpink; */
-	/* justify-content: space-between; */
 	padding: 5px 0 70px 0;
 `;
 
@@ -74,4 +70,18 @@ export const Pages = styled.div`
 	align-items: center;
 	height: 40px;
 	width: 100%;
+
+	.MuiButtonBase-root {
+		background-color: transparent;
+		border: 1px solid #fbfbfb;
+		box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 10px;
+	}
+
+	.MuiButtonBase-root:hover {
+		background-color: rgba(52, 161, 83, 0.1);
+	}
+
+	.MuiPaginationItem-page.Mui-selected {
+		background-color: #34A153;
+	}
 `;

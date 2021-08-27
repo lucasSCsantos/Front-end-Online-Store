@@ -5,7 +5,8 @@ export const SEND_SEARCH = 'SEND_SEARCH';
 export const GET_PRODUCTS = 'GET_PRODUCTS';
 export const REQUEST = 'REQUEST';
 export const FAILED = 'FAILED';
-export const GET_DETAILS = 'GET_DETAILS'
+export const GET_DETAILS = 'GET_DETAILS';
+// export const SET_RATE = 'SET_RATE'
 
 export const getDetails = (payload) => (
 	{
@@ -27,6 +28,13 @@ export const search_action = (payload) => (
 		payload,
 	}
 );
+
+// export const product_rate = (payload) => (
+// 	{
+// 		type: SET_RATE,
+// 		payload,
+// 	}
+// );
 
 const getProducts = (json) => (
 	{
