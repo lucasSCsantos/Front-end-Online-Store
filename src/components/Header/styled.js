@@ -39,11 +39,13 @@ export const Search = styled.div`
 			background-color: #FBFBFB;
 			border: solid 1px #F2F3F5;
 			padding: 5px 10px;
+			transition: ease 0.2s;
 		}
 
 		input:focus {
 			outline: none;
 			border: solid 1px #5cb85c;
+			transition: ease 0.2s;
 		}
 
 		.menuBtn {
