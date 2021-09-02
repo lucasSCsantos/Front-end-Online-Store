@@ -1,4 +1,4 @@
-import { GET_DETAILS, SEND_CATEGORY, FAILED, REQUEST, GET_PRODUCTS, SEND_SEARCH, SET_RATE } from '../action'
+import { GET_DETAILS, SEND_CATEGORY, FAILED, REQUEST, GET_PRODUCTS, SEND_SEARCH } from '../action'
 
 const initial_state = {
 	productsList: [],

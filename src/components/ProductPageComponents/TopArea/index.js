@@ -8,7 +8,6 @@ import StarRatings from 'react-star-ratings';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import addToCart from '../../../helpers/addToCart';
-import { useHistory } from 'react-router';
 import addToFavorite from '../../../helpers/addToFavorite';
 
 export default function Page() {
@@ -18,7 +17,6 @@ export default function Page() {
 	const [isInCart, setIsInCart] = useState(false);
 	const productRate = localStorage.productRates
 		? JSON.parse(localStorage.productRates)[id] : 0;
-	const history = useHistory();
 	const cartList = JSON.parse(localStorage.getItem('cartItems'));
 	const favoriteList = JSON.parse(localStorage.getItem('favoriteItems'));
 
@@ -27,7 +25,7 @@ export default function Page() {
 		const cart = cartList && cartList.some(({id}) => id === product.id);
 		setIsInCart(cart);
 		setIsFavorite(favorite);
-	}, [])
+	}, [cartList, favoriteList, product.id])
 
 	return (
 		<Container>

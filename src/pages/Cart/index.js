@@ -12,12 +12,6 @@ export default function Page() {
 	const [total, setTotal] = useState(0);
 	const [att, setAtt] = useState(0);
 
-	useEffect(() => {
-		if (cartItems) {
-			correctCart();
-		}
-	}, [att]);
-
 	const correctCart = () => {
 		const newList = cartItems.filter((item) => {
 			if((repeatCount(cartItems, item.id) > 1 && item.count === 1)) {
@@ -34,6 +28,12 @@ export default function Page() {
 		setList(newList);
 	}
 
+	useEffect(() => {
+		if (cartItems) {
+			correctCart();
+		}
+	}, [att]);
+
 	return (
 		<Container>
 			<p className="top">Carrinho</p>
@@ -42,7 +42,7 @@ export default function Page() {
 					{(list && list.length > 0) ? list.map((item, index) => {
 						return (
 							<CartItem key={index}>
-								<img src={item.thumbnail} />
+								<img src={item.thumbnail} alt={item.title} />
 								<div className="middle">
 									<small>
 										{`Código do produto: ${item.id}`}
