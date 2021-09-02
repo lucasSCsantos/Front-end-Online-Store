@@ -21,7 +21,7 @@ export default function Page() {
 		}
 		
 		startProducts();
-	}, [query])
+	}, [query, dispatch])
 
 	useEffect(() => {
 		const prdCounts = Math.ceil(products.length / 16)

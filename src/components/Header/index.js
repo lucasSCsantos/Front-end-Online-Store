@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Logo, Search, Icons, ContentArea } from './styled';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { fetchProducts, search_action } from '../../action';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';

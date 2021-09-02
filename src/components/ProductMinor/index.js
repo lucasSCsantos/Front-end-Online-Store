@@ -26,7 +26,7 @@ export default function Page({product}) {
 		const cart = cartList && cartList.some(({id}) => id === product.id);
 		setIsInCart(cart);
 		setIsFavorite(favorite);
-	}, [])
+	}, [cartList, favoriteList, product.id])
 	
 	return (
 			<Product>

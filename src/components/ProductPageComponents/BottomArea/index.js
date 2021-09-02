@@ -26,8 +26,7 @@ export default function Page({product}) {
 			}, 0)
 			localStorage.productRates = JSON.stringify({...productRates, [product.id]: total/actualProductComments.length})
 		}
-		// console.log(total);
-	}, [comments])
+	}, [comments, product.id])
 
 	return (
 		<Container>

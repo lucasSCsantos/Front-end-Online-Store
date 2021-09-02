@@ -7,7 +7,6 @@ import ProductsBySearch from './components/ProductsBySearch';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Categories from './components/Categories';
-import SideBar from './components/SideBar';
 import Cart from './pages/Cart';
 import './App.css';
 import { useSelector } from 'react-redux';
@@ -31,10 +30,12 @@ function App() {
       document.title = categoryPageTitle;
     } else if (pathname.includes('cart')) {
       document.title = 'Carrinho';
+    } else if (pathname.includes('favorites')) {
+      document.title = 'Favoritos';
     } else {
       document.title = productPageTitle;
     }
-  }, [pathname])
+  }, [pathname, categoryPageTitle, productPageTitle, queryPageTitle])
 
   return (
     <div>
