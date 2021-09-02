@@ -132,6 +132,11 @@ export const CartTotal = styled.div`
 		border-radius: 4px;
 		cursor: pointer;
 		color: white;
+		transition: opacity 0.1s;
+		&:disabled {
+			opacity: 0.7;
+			transition: opacity 0.2s;
+		}
 		&:active {
 			background-color: #1E5E30;
 		}
@@ -141,5 +146,29 @@ export const CartTotal = styled.div`
 export const Content = styled.div`
 	display: flex;
 	width: 61%;
+	min-height: 60vh;
 	justify-content: space-between;
+`
+export const EmptyCart = styled.div`
+	opacity: 0.7;
+	height: 500px;
+	width: 700px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	svg {
+		width: 200px;
+		height: 200px;
+		color: #52A254;
+	}
+	p {
+		margin-top: -10px;
+		font-weight: 900;
+		font-size: 20px;
+		span {
+			color: #EC603D;
+			font-size: 30px;
+		}
+	}
 `

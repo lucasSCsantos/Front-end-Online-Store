@@ -18,9 +18,14 @@ export const ContentArea = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	width: 61%;
+
+	a {
+		text-decoration: unset !important;
+	}
 `;
 
 export const Logo = styled.div`
+	color: black;
 `;
 
 export const Search = styled.div`

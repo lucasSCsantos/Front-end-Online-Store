@@ -38,7 +38,7 @@ export default function Page() {
 			<ContentArea>
 				<Link to="/">
 					<Logo>
-						Alser.kz
+						Lucas.kz
 					</Logo>
 				</Link>
 				<Search>

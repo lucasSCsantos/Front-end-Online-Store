@@ -1,10 +1,10 @@
-import { Link } from '@material-ui/core';
 import React, { useEffect, useState } from 'react'
 import addToCart from '../../helpers/addToCart';
 import deleteFromCart from '../../helpers/deleteFromCart';
 import removeOfCart from '../../helpers/removeOfCart';
 import repeatCount from '../../helpers/repeatCount';
-import { Container, CartItem, CartTotal, Content } from './styled'
+import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
+import { Container, CartItem, CartTotal, Content, EmptyCart } from './styled'
 
 export default function Page() {
 	const cartItems = JSON.parse(localStorage.getItem('cartItems'));
@@ -39,7 +39,7 @@ export default function Page() {
 			<p className="top">Carrinho</p>
 			<Content>
 				<div className="items-area">
-					{list && list.map((item, index) => {
+					{(list && list.length > 0) ? list.map((item, index) => {
 						return (
 							<CartItem key={index}>
 								<img src={item.thumbnail} />
@@ -70,14 +70,19 @@ export default function Page() {
 									</button>
 								</div>
 							</CartItem>
-					)})}
+					)})
+					: <EmptyCart>
+							<ShoppingCartOutlinedIcon />
+							<p>Seu carrinho está <span>vazio</span></p>
+						</EmptyCart>
+					}
 				</div>
 				<CartTotal>
 					<div className="total-price">
 						<p>Valor a pagar:</p>
 						<p className="cart-total">R$<span>{total.toFixed(2)}</span></p>
 					</div>
-					<button type="button">
+					<button type="button" disabled={list.length > 0 ? false : true}>
 						Fazer Compra
 					</button>
 				</CartTotal>

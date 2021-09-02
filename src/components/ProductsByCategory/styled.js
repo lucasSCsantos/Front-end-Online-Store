@@ -66,6 +66,7 @@ export const Button = styled.div`
 export const Pages = styled.div`
 	/* background-color: blue; */
 	display: flex;
+	margin-top: 20px;
 	justify-content: center;
 	align-items: center;
 	height: 40px;

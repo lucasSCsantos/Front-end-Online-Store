@@ -74,6 +74,7 @@ export const Button = styled.div`
 
 export const Pages = styled.div`
 	/* background-color: blue; */
+	margin-top: 20px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
