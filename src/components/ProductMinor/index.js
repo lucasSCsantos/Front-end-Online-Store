@@ -27,7 +27,7 @@ export default function Page({product}) {
 		setIsInCart(cart);
 		setIsFavorite(favorite);
 	}, [])
-	
+	//me lembra de tirar
 	return (
 			<Product>
 				<Link
