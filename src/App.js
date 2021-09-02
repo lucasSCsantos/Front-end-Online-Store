@@ -5,6 +5,7 @@ import ProductPage from './pages/ProductPage';
 import ProductsByCategory from './components/ProductsByCategory';
 import ProductsBySearch from './components/ProductsBySearch';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import Categories from './components/Categories';
 import SideBar from './components/SideBar';
 import Cart from './pages/Cart';
@@ -68,6 +69,7 @@ function App() {
           render={ (props) => <Favorite { ...props } />}
         />
       </Switch>
+      <Footer />
     </div>
   );
 }
