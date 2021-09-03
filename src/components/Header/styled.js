@@ -10,6 +10,11 @@ export const Container = styled.div`
 	/* padding: 10px; */
 	padding: 10px 0;
 	height: 54px;
+	@media (max-width: 600px) {
+		height: calc(54px * 5);
+		background-color: #EBEBEB;
+		box-shadow: none;
+	}
 `;
 
 export const ContentArea = styled.div`
@@ -18,7 +23,10 @@ export const ContentArea = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	width: 61%;
-
+	@media (max-width: 600px) {
+		flex-direction: column;
+		justify-content: space-around;
+	}
 	a {
 		text-decoration: unset !important;
 	}
@@ -89,7 +97,24 @@ export const Search = styled.div`
 			flex-basis: 12%;
 			cursor: pointer;
 		}
+	}
 
+	@media (max-width: 600px) {
+		height: 15%;
+		form {
+			width: 90%;
+			border: solid 4px #52A254;
+			border-radius: 6px;
+			input {
+				width: 70%;
+			}
+			.menuBtn {
+				display: none;
+			}
+			.searchBtn {
+				width: 30%;
+			}
+		}
 	}
 `;
 
@@ -133,5 +158,20 @@ export const Icons = styled.div`
 		align-items: center;
 		border-radius: 20px;
 		background-color: #F65723;
+	}
+
+	@media (max-width: 600px) {
+		width: 70%;
+		a {
+			background-color: #52A254;
+			width: 40px;
+			height: 40px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: white;
+			/* background-color: blueviolet; */
+			border-radius: 50px;
+		}
 	}
 `;

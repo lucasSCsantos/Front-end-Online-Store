@@ -18,13 +18,26 @@ export const Container = styled.div`
     justify-content: center;
     top: calc(50% - 10px);
     z-index: 10;
-    left: 340px;
+    left: 18%;
     /* font-size: 50px; */
   }
 
   .next {
     left: unset;
-    right: 340px;
+    right: 18%;
+  }
+
+  @media (max-width: 600px) {
+    /* background-color: red; */
+    background-color: #EBEBEB;
+    /* width: 410px; */
+    width: 100%;
+    .previous {
+      left: 12%;
+    }
+    .next {
+      right: 12%;
+    }
   }
 `;
 
@@ -32,7 +45,6 @@ export const Categories = styled.div`
   overflow: hidden;
   display: flex;
   justify-content: space-between;
-  /* background-color: rebeccapurple; */
   width: 61%;
   height: 120px;
   align-items: center;
@@ -95,6 +107,11 @@ export const Category = styled.div`
       transition: 0.5s ease;
       opacity: 0;
     }
+  }
+
+  @media (max-width: 600px) {
+    /* background-color: blue; */
+    margin-right: 16px;
   }
 
   @keyframes alzer {
