@@ -41,17 +41,17 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 412px) {
   .app {
-    width: 380px;
+    width: 412px;
     height: 640px;
     margin-right: 0;
   }
 }
 
-@media (max-width: 412px) {
+@media (max-width: 380px) {
   .app {
-    width: 412px;
+    width: 380px;
     height: 640px;
     margin-right: 0;
   }
@@ -64,3 +64,4 @@
     margin-right: 0;
   }
 }
+
