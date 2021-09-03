@@ -10,7 +10,7 @@ export const Container = styled.div`
 	/* padding: 10px; */
 	padding: 10px 0;
 	height: 54px;
-	@media (max-width: 600px) {
+	@media (max-width: 1000px) {
 		height: calc(54px * 5);
 		background-color: #EBEBEB;
 		box-shadow: none;
@@ -23,7 +23,7 @@ export const ContentArea = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	width: 61%;
-	@media (max-width: 600px) {
+	@media (max-width: 1000px) {
 		flex-direction: column;
 		justify-content: space-around;
 	}
@@ -99,7 +99,7 @@ export const Search = styled.div`
 		}
 	}
 
-	@media (max-width: 600px) {
+	@media (max-width: 1000px) {
 		height: 15%;
 		form {
 			width: 90%;
@@ -160,7 +160,7 @@ export const Icons = styled.div`
 		background-color: #F65723;
 	}
 
-	@media (max-width: 600px) {
+	@media (max-width: 1000px) {
 		width: 70%;
 		a {
 			background-color: #52A254;

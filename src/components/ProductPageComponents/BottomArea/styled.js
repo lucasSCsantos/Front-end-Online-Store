@@ -6,7 +6,7 @@ export const Container = styled.div`
 		font-size: 20px;
 		margin: 10px 0;
 	}
-	@media (max-width: 600px) {
+	@media (max-width: 1000px) {
     width: 80%;
   }
 `;
@@ -61,7 +61,7 @@ export const Comment = styled.div`
 			background-color: #30934c;
 		}
 	}
-	@media (max-width: 600px) {
+	@media (max-width: 1000px) {
     width: 73%;
 		form {
 			flex-direction: column;

@@ -5,7 +5,7 @@ export const Container = styled.div`
   width: 61%;
   display: flex;
   justify-content: space-between;
-  @media (max-width: 600px) {
+  @media (max-width: 1000px) {
 		/* background-color: red; */
     flex-direction: column;
     width: 80%;
@@ -73,7 +73,7 @@ export const Info = styled.div`
       margin-top: -8px;
     }
   }
-  @media (max-width: 600px) {
+  @media (max-width: 1000px) {
 		width: 100%;
     margin-top: 20px;
     /* background-color: blue; */

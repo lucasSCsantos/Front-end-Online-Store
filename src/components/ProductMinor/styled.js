@@ -130,9 +130,9 @@ export const Product = styled.div`
 			/* background-color: brown; */
 		}
 	}
-	@media (max-width: 600px) {
-		margin-left: 0;
-		margin-right: 0;
+	@media (max-width: 1000px) {
+		margin-left: 6.5px;
+		margin-right: 6.5px;
   }
 `;
 

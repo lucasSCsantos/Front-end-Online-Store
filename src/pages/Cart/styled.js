@@ -15,7 +15,7 @@ export const Container = styled.div`
 		font-size: 20px;
 		font-weight: 800;
 	}
-	@media (max-width: 600px) {
+	@media (max-width: 1000px) {
 		background-color: #f6f6f6;
 		.top {
 			margin-left: 0;
@@ -101,7 +101,7 @@ export const CartItem = styled.div`
 			color: black;
 		}
 	}
-	@media (max-width: 600px) {
+	@media (max-width: 1000px) {
 		/* background-color: blue; */
 		flex-direction: column;
 		/* background-color: blueviolet; */
@@ -169,7 +169,7 @@ export const CartTotal = styled.div`
 			background-color: #1E5E30;
 		}
 	}
-	@media (max-width: 600px) {
+	@media (max-width: 1000px) {
 		/* background-color: blue; */
 		margin-bottom: 30px;
 		width: 80%;
@@ -207,7 +207,7 @@ export const EmptyCart = styled.div`
 			font-size: 30px;
 		}
 	}
-	@media (max-width: 600px) {
+	@media (max-width: 1000px) {
 		width: 100%;
 		/* background-color: grey; */
 		p {
@@ -224,7 +224,7 @@ export const Content = styled.div`
 	width: 61%;
 	min-height: 60vh;
 	justify-content: space-between;
-	@media (max-width: 600px) {
+	@media (max-width: 1000px) {
 		background-color: #f6f6f6;
 		flex-direction: column;
   }

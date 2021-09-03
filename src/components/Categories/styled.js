@@ -27,9 +27,9 @@ export const Container = styled.div`
     right: 18%;
   }
 
-  @media (max-width: 600px) {
-    /* background-color: red; */
+  @media (max-width: 1000px) {
     background-color: #EBEBEB;
+    /* background-color: red; */
     /* width: 410px; */
     width: 100%;
     .previous {
@@ -109,7 +109,7 @@ export const Category = styled.div`
     }
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 1000px) {
     /* background-color: blue; */
     margin-right: 16px;
   }
