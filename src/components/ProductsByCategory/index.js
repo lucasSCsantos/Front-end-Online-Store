@@ -52,6 +52,8 @@ export default function Page(props) {
 				nextPage();
 			}
 		}
+		document.body.scrollTop = 0;
+		document.documentElement.scrollTop = 0;
 	}
 
 	const productsList = (

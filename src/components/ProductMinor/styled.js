@@ -130,7 +130,10 @@ export const Product = styled.div`
 			/* background-color: brown; */
 		}
 	}
-
+	@media (max-width: 600px) {
+		margin-left: 0;
+		margin-right: 0;
+  }
 `;
 
 export const Img = styled.div`

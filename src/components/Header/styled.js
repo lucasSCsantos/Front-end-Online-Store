@@ -173,5 +173,8 @@ export const Icons = styled.div`
 			/* background-color: blueviolet; */
 			border-radius: 50px;
 		}
+		.cart-count {
+			right: 12px;
+		}
 	}
 `;

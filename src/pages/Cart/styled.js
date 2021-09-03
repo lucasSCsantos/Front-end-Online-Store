@@ -15,6 +15,15 @@ export const Container = styled.div`
 		font-size: 20px;
 		font-weight: 800;
 	}
+	@media (max-width: 600px) {
+		background-color: #f6f6f6;
+		.top {
+			margin-left: 0;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+		}
+  }
 `;
 
 export const CartItem = styled.div`
@@ -92,6 +101,25 @@ export const CartItem = styled.div`
 			color: black;
 		}
 	}
+	@media (max-width: 600px) {
+		/* background-color: blue; */
+		flex-direction: column;
+		/* background-color: blueviolet; */
+		width: 87%;
+		height: 400px;
+		justify-content: space-around;
+		align-items: center;
+		.middle {
+			/* background-color: red; */
+			flex-wrap: wrap;
+			height: 150px;
+			margin-left: 0;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+  }
 `;
 
 export const CartTotal = styled.div`
@@ -141,14 +169,22 @@ export const CartTotal = styled.div`
 			background-color: #1E5E30;
 		}
 	}
+	@media (max-width: 600px) {
+		/* background-color: blue; */
+		margin-bottom: 30px;
+		width: 80%;
+		.total-price {
+			/* background-color: green; */
+			p {
+				font-size: 12px;
+			}
+		}
+		button {
+			width: 90%
+		}
+  }
 `;
 
-export const Content = styled.div`
-	display: flex;
-	width: 61%;
-	min-height: 60vh;
-	justify-content: space-between;
-`
 export const EmptyCart = styled.div`
 	opacity: 0.7;
 	height: 500px;
@@ -171,4 +207,25 @@ export const EmptyCart = styled.div`
 			font-size: 30px;
 		}
 	}
+	@media (max-width: 600px) {
+		width: 100%;
+		/* background-color: grey; */
+		p {
+			font-size: 16px;
+			span {
+				font-size: 26px;
+			}
+		}
+  }
 `
+
+export const Content = styled.div`
+	display: flex;
+	width: 61%;
+	min-height: 60vh;
+	justify-content: space-between;
+	@media (max-width: 600px) {
+		background-color: #f6f6f6;
+		flex-direction: column;
+  }
+`;
