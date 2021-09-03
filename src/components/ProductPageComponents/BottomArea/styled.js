@@ -2,11 +2,13 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 	width: 61%;
-	margin-bottom: 100px;
 	h1 {
 		font-size: 20px;
 		margin: 10px 0;
 	}
+	@media (max-width: 600px) {
+    width: 80%;
+  }
 `;
 
 export const Comment = styled.div`
@@ -24,7 +26,6 @@ export const Comment = styled.div`
 		overflow: hidden;
 		min-height: 50px;
 		border: lightgray 1px solid;
-		/* padding: 1px; */
 		width: 400px;
 		font-weight: 300;
 		border-radius: 5px;
@@ -60,26 +61,43 @@ export const Comment = styled.div`
 			background-color: #30934c;
 		}
 	}
+	@media (max-width: 600px) {
+    width: 73%;
+		form {
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+			height: 180px;
+			input {
+				width: 99%;
+				margin-right: 0;
+			}
+			button {
+				margin-left: 0;
+			}
+		}
+  }
 `
 
 export const Comments = styled.div`
-
 	h2 {
 		margin-top: 30px;
 		font-size: 18px;
 	}
-
+	
 	div {
 		margin: 10px 0;
-
+		
 		hr {
 			border: solid 1px lightgray;
 		}
 	}
-
+	
 	.comment {
+		background-color: white;
 		display: flex;
 		align-items: center;
+		flex-direction: column;
 		p {
 			margin-right: 30px;
 		}

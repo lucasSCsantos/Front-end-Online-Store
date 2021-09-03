@@ -11,6 +11,9 @@ export const Container = styled.div`
 		font-size: 20px;
 		margin: 10px 0;
 	}
+	@media (max-width: 600px) {
+    width: 80%;
+  }
 `;
 
 export const Attributes = styled.div`
@@ -35,4 +38,7 @@ export const Attributes = styled.div`
 			}
 		}
 	}
+	@media (max-width: 600px) {
+		width: 90%;
+  }
 `
