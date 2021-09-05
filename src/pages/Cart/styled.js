@@ -222,7 +222,7 @@ export const EmptyCart = styled.div`
 export const Content = styled.div`
 	display: flex;
 	width: 61%;
-	min-height: 60vh;
+	min-height: 61vh;
 	justify-content: space-between;
 	@media (max-width: 1000px) {
 		background-color: #f6f6f6;

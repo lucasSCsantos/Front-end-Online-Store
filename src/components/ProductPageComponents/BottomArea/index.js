@@ -73,7 +73,7 @@ export default function Page({product}) {
 				</form>
 				<Comments>
 					{comments.length > 0 && <h2>Comentários mais recentes:</h2>}
-					{ comments && comments.slice(comments.length - 5, comments.length).map((comment, index) => {
+					{ comments && comments.slice((comments.length >= 5 ? comments.length - 5 : 0), comments.length).map((comment, index) => {
 						return (
 							<div key={index}>
 								<div className="comment">

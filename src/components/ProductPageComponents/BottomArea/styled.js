@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 	width: 61%;
+	margin-bottom: 40px;
 	h1 {
 		font-size: 20px;
 		margin: 10px 0;
@@ -16,7 +17,6 @@ export const Comment = styled.div`
 	padding: 30px 35px;
 	/* height: 60px; */
 	background-color: white;
-
 	form {
 		display: flex;
 		align-items: center;
@@ -25,7 +25,7 @@ export const Comment = styled.div`
 		resize: none;
 		overflow: hidden;
 		min-height: 50px;
-		border: lightgray 1px solid;
+		border: lightgrey 1px solid;
 		width: 400px;
 		font-weight: 300;
 		border-radius: 5px;
@@ -97,9 +97,14 @@ export const Comments = styled.div`
 		background-color: white;
 		display: flex;
 		align-items: center;
-		flex-direction: column;
 		p {
 			margin-right: 30px;
 		}
 	}
+
+	@media (max-width: 1000px) {
+		.comment {
+			flex-direction: column;
+		}
+  }
 `
