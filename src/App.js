@@ -23,7 +23,7 @@ function App() {
       ? document.title = "LucaSTore" 
         : document.title = condition ? categoryPageTitle : productPageTitle;
     if (pathname === '/') {
-      document.title = "Alser.kz"
+      document.title = "LucaSTore"
     } else if (pathname.includes('search')) {
       document.title = `Resultados de pesquisa para ${queryPageTitle}`
     } else if (pathname.includes('category')) {
