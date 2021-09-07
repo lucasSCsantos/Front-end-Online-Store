@@ -61,6 +61,8 @@ export default function Page() {
 				nextPage();
 			}
 		}
+		document.body.scrollTop = 0;
+		document.documentElement.scrollTop = 0;
 	}
 
 	const loader = (

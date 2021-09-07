@@ -10,4 +10,7 @@ export const Container = styled.div`
 	/* position: absolute;
 	bottom: 0; */
 	background-color: #52A254;
+	@media (max-width: 1000px) {
+		font-size: 12px;
+  }
 `;

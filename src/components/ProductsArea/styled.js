@@ -10,12 +10,10 @@ export const Container = styled.div`
 	flex-direction: column;
 	.loaderBg {
 		margin: 0 520px 600px;
-		/* margin-left: 520px;
-		margin-bottom: 300px; */
 		.loader {
 			margin-top: 100px;
-			border: 8px solid #f3f3f3; /* Light grey */
-			border-top: 8px solid #2D8946; /* Blue */
+			border: 8px solid #f3f3f3;
+			border-top: 8px solid #2D8946; 
 			border-radius: 50%;
 			width: 100px;
 			height: 100px;
@@ -28,6 +26,13 @@ export const Container = styled.div`
 		0% { transform: rotate(0deg); }
 		100% { transform: rotate(360deg); }
 	}
+
+	@media (max-width: 1000px) {
+    /* background-color: red; */
+		flex-wrap: wrap;
+		justify-content: center;
+		width: 100%;
+  }
 `;
 
 export const Products = styled.div`
@@ -36,6 +41,11 @@ export const Products = styled.div`
 	flex-wrap: wrap;
 	/* justify-content: space-between; */
 	padding: 35px 0 70px 0;
+	@media (max-width: 1000px) {
+		background-color: #f6f6f6;
+		justify-content: center;
+		width: 100%;
+  }
 `;
 
 export const Button = styled.div`
@@ -70,6 +80,15 @@ export const Button = styled.div`
 			transition: 100ms ease;
 		}
 	}
+	@media (max-width: 1000px) {
+    /* background-color: black; */
+		height: calc(38px * 3);
+		flex-direction: column;
+		button {
+			height: 33%;
+			width: 61%;
+		}
+  }
 `;
 
 export const Pages = styled.div`

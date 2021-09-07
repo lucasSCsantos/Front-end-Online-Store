@@ -5,6 +5,11 @@ export const Container = styled.div`
   width: 61%;
   display: flex;
   justify-content: space-between;
+  @media (max-width: 1000px) {
+		/* background-color: red; */
+    flex-direction: column;
+    width: 80%;
+  }
 `;
 
 export const Info = styled.div`
@@ -16,7 +21,7 @@ export const Info = styled.div`
   margin-bottom: 40px;
   display: flex;
   flex-direction: column;
-
+  
   .title {
     flex-basis: 1;
     height: 15%;
@@ -67,6 +72,14 @@ export const Info = styled.div`
       font-size: 13px;
       margin-top: -8px;
     }
+  }
+  @media (max-width: 1000px) {
+		width: 100%;
+    margin-top: 20px;
+    /* background-color: blue; */
+    height: 600px;
+    justify-content: space-evenly;
+    padding: 0;
   }
 `;
 

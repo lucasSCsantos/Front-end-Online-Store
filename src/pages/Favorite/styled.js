@@ -37,6 +37,22 @@ export const Container = styled.div`
 		0% { transform: rotate(0deg); }
 		100% { transform: rotate(360deg); }
 	}
+	@media (max-width: 1000px) {
+    /* background-color: red; */
+		flex-wrap: wrap;
+		justify-content: center;
+		width: 100%;
+		margin: 0;
+		.top {
+			width: 100%;
+			height: 50px;
+			background-color: #f6f6f6;
+			display: flex;
+			justify-content: center;
+			margin: 0;
+			align-items: center;
+		}
+  }
 `;
 
 export const Products = styled.div`
@@ -45,6 +61,11 @@ export const Products = styled.div`
 	flex-wrap: wrap;
 	/* justify-content: space-between; */
 	padding: 35px 0 70px 0;
+	@media (max-width: 1000px) {
+		background-color: #f6f6f6;
+		justify-content: center;
+		width: 100%;
+  }
 `;
 
 export const Button = styled.div`

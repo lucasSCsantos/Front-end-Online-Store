@@ -103,18 +103,13 @@ export const Product = styled.div`
 	}
 
 	.product-price {
-		/* position: absolute; */
-		/* align-self: center; */
-		/* background-color: blue; */
 		font-size: 12px;
 		font-weight: 700;
 		color: grey;
 		margin-top: 15px;
-		/* text-align: center; */
 		span {
 			font-size: 18px;
 			color: black;
-			/* background-color: brown; */
 		}
 	}
 
@@ -127,6 +122,10 @@ export const Product = styled.div`
 			color: #388E3B;
 		}
 	}
+	@media (max-width: 1000px) {
+		margin-left: 6.5px;
+		margin-right: 6.5px;
+  }
 `;
 
 export const Img = styled.div`

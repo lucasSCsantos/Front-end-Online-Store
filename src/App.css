@@ -40,3 +40,28 @@
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 412px) {
+  .app {
+    width: 412px;
+    height: 640px;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .app {
+    width: 380px;
+    height: 640px;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .app {
+    width: 360px;
+    height: 640px;
+    margin-right: 0;
+  }
+}
+

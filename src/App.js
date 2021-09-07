@@ -37,8 +37,7 @@ function App() {
   }, [pathname])
 
   return (
-    <div>
-      {/* <SideBar /> */}
+    <div className="app">
       <Header />
       <Categories />
       <Switch>
