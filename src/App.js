@@ -20,7 +20,7 @@ function App() {
   useEffect(() => {
     const condition = pathname.includes('category');
     pathname === '/' || pathname.includes('search')
-      ? document.title = "Alser.kz" 
+      ? document.title = "LucaSTore" 
         : document.title = condition ? categoryPageTitle : productPageTitle;
     if (pathname === '/') {
       document.title = "Alser.kz"
