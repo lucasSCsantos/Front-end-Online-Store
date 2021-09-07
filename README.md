@@ -34,3 +34,5 @@ npm start
 ## Feito com
 
 - [React](https://pt-br.reactjs.org/)
+- [Styled-Components](https://styled-components.com/)
+- [Redux](https://redux.js.org/)
