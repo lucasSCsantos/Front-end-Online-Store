@@ -7,7 +7,6 @@ import ProductsBySearch from './components/ProductsBySearch';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Categories from './components/Categories';
-import SideBar from './components/SideBar';
 import Cart from './pages/Cart';
 import './App.css';
 import { useSelector } from 'react-redux';
