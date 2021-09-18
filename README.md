@@ -16,7 +16,7 @@ Uma loja online simulada com front-end
 1. Clone o repositório
 
 ```javascript
-git clone https://github.com/rahuldkjain/github-profile-readme-generator.git
+git clone git@github.com:lucasSCsantos/sd-011-project-frontend-online-store.git
 ```
 
 2. Instale as dependencias
