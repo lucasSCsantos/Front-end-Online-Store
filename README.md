@@ -1,6 +1,6 @@
 # Front-end Online Store
 
-Uma loja online simulada com front-end
+Uma loja online front-end que utiliza a api do mercado livre e possibilita a busca de produtos de várias formas, feita para a prática de estilização css e crição de features de um e-commerce
 
 ### <p align="center">[Link da Aplicação](https://frontend-web-store.netlify.app/)</p>
 
