@@ -2,6 +2,8 @@
 
 Uma loja online simulada com front-end
 
+### <p align="center">[Link da Aplicação](https://frontend-web-store.netlify.app/)</p>
+
 ## Recursos
 
 - Buscar produtos e categorias na api de https://developers.mercadolivre.com.br/
